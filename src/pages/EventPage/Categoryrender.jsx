@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import EventCard from "./EventCard";
 
 import ART from "./Images/ART.jpg";
 import CINEMA from "./Images/CINEMA.jpg";
@@ -25,14 +26,10 @@ export default function Display({ category }) {
 
   async function getEvents(selectedCategory) {
     if (selectedCategory === "ALL") {
-// apicall to getevnts api
-
       setEvents(demoEvents);
       return;
     }
-    // apicall to getevntsby categories
     const filtered = demoEvents.filter((ev) => ev.category === selectedCategory);
-
     setEvents(filtered);
   }
 
@@ -40,11 +37,9 @@ export default function Display({ category }) {
     getEvents(category);
   }, [category]);
 
-
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 px-32">
-
         {events.length === 0 && (
           <motion.p
             key="no-data"
@@ -58,71 +53,52 @@ export default function Display({ category }) {
         )}
 
         {events.map((event, index) => (
-          <motion.div
+          <EventCard
             key={event.name}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 0px 20px rgba(254, 208, 0, 0.5)"
-            }}
+            event={event}
+            index={index}
             onClick={() => setSelectedEvent(event)}
-            className="border border-[#FED000] bg-[#802C00] bg-opacity-60 shadow-md rounded-lg pb-5 cursor-pointer backdrop-blur-md overflow-hidden"
-          >
-            <img
-              src={event.image}
-              alt={event.name}
-              className="w-full h-72 object-cover rounded-md"
-            />
-
-            <h3 className="text-lg font-bold font-['Cinzel_Decorative'] mt-2 text-[#FED000] text-center">
-              {event.name}
-            </h3>
-          </motion.div>
+          />
         ))}
       </div>
 
-      {/* ✅ POPUP MODAL */}
-      
-        {selectedEvent && (
+      {/*Popup*/}
+      {selectedEvent && (
+        <motion.div
+          key="modal"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-200"
+          onClick={() => setSelectedEvent(null)}
+        >
           <motion.div
-            key="modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center z-[200]"
-            onClick={() => setSelectedEvent(null)}
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.7, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-[#802C00] text-[#FED000] rounded-xl p-6 shadow-2xl border border-[#FED000] w-[400px] sm:w-[450px]"
+            onClick={(e) => e.stopPropagation()}
           >
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.7, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-[#802C00] text-[#FED000] rounded-xl p-6 shadow-2xl border border-[#FED000] w-[400px] sm:w-[450px]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={selectedEvent.image}
-                alt={selectedEvent.name}
-                className="w-full h-64 object-cover rounded-md"
-              />
+            <img
+              src={selectedEvent.image}
+              alt={selectedEvent.name}
+              className="w-full h-64 object-cover rounded-md"
+            />
 
-              <h2 className="text-center text-3xl font-['Cinzel_Decorative'] mt-4 font-bold">
-                {selectedEvent.name}
-              </h2>
-       
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="mt-4 w-full border border-[#FED000] text-[#FED000] py-2 rounded-lg hover:bg-[#FED000] hover:text-black transition"
-              >
-                Close
-              </button>
-            </motion.div>
+            <h2 className="text-center text-3xl font-['Cinzel_Decorative'] mt-4 font-bold">
+              {selectedEvent.name}
+            </h2>
+
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="mt-4 w-full border border-[#FED000] text-[#FED000] py-2 rounded-lg hover:bg-[#FED000] hover:text-black transition"
+            >
+              Close
+            </button>
           </motion.div>
-        )}
-      
+        </motion.div>
+      )}
     </>
   );
 }

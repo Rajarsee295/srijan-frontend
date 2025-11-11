@@ -21,3 +21,7 @@ body {
   
   background-blend-mode: multiply;
 }
+
+.perspective-1000 {
+  perspective: 1000px;
+}
