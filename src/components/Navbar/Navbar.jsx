@@ -1,8 +1,15 @@
 // src/components/Navbar/Navbar.jsx
 
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
+
+
+
+
   return (
     <>
       <div className="w-full flex justify-between items-center px-6 py-3 font-[Cinzel_Decorative] text-[#FED000] text-xl relative z-50">

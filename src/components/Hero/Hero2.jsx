@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import "./Hero2.css";
 import "./HeroCosmic.css";
 import logo from "../../assets/logo.png.png";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import Mandala from "../../assets/mandala.png";
 import Tree from "../../assets/TreeBg.png";
-import GalleryPage from "../../pages/Gallery";
 import GalleryGrid from "../GalleryGrid/GalleryGrid";
 import textBackdropSrc from "../../assets/text-backdrop.png";
 
@@ -19,20 +19,16 @@ const navItems = [
   { path: "/team", label: "TEAM", hindi: "टीम" },
 ];
 
+// skip animation logic
 const resolveInitialSkipState = (forcedSkip) => {
-  if (typeof forcedSkip === "boolean") {
-    return forcedSkip;
-  }
-
+  if (typeof forcedSkip === "boolean") return forcedSkip;
   if (typeof window === "undefined") return true;
 
-  const hasPlayed = sessionStorage.getItem('__HERO_ANIMATION_PLAYED__');
+  const hasPlayed = sessionStorage.getItem("__HERO_ANIMATION_PLAYED__");
 
-  if (hasPlayed === 'true') {
-    return true;
-  }
+  if (hasPlayed === "true") return true;
 
-  sessionStorage.setItem('__HERO_ANIMATION_PLAYED__', 'true');
+  sessionStorage.setItem("__HERO_ANIMATION_PLAYED__", "true");
   return false;
 };
 
@@ -40,6 +36,38 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   const [skipAnimation, setSkipAnimation] = useState(() =>
     resolveInitialSkipState(skipAnimationProp)
   );
+
+  // USER DATA
+  const [user, setUser] = useState("");
+
+  async function getUser() {
+    try {
+      const res = await axios.get(
+        "https://srijan-2026.onrender.com/api/v1/user/current-user",
+        { withCredentials: true }
+      );
+      setUser(res.data.fullname);
+    } catch (error) {
+      setUser("");
+    }
+  }
+
+  async function logout() {
+    try {
+      await axios.get(
+        "https://srijan-2026.onrender.com/api/v1/user/logout",
+        { withCredentials: true }
+      );
+      setUser("");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   useEffect(() => {
     if (typeof skipAnimationProp === "boolean") {
@@ -66,14 +94,8 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
       return;
     }
 
-    const circleTimer = setTimeout(() => {
-      setAnimationStage("logo");
-    }, 1500);
-
-    const logoTimer = setTimeout(() => {
-      setAnimationStage("move");
-    }, 3000);
-
+    const circleTimer = setTimeout(() => setAnimationStage("logo"), 1500);
+    const logoTimer = setTimeout(() => setAnimationStage("move"), 3000);
     const moveTimer = setTimeout(() => {
       setAnimationStage("main");
       onAnimationComplete?.();
@@ -98,6 +120,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
 
         <div className="hero2-background" />
 
+        {/* BG SECTION */}
         <motion.div
           className="hero2-right-bg"
           initial={{ opacity: skipAnimation ? 1 : 0 }}
@@ -105,16 +128,19 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
           transition={{ duration: skipAnimation ? 0 : 0.8 }}
         >
           <div className="orange-glow" />
-
           <img src={Tree} alt="Tree Background" className="tree-bg" />
         </motion.div>
 
+        {/* ------------ DESKTOP NAV --------------- */}
         {showContent && (
           <>
             <motion.nav
               initial={{ opacity: skipAnimation ? 1 : 0, y: skipAnimation ? 0 : -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: skipAnimation ? 0 : 0.8, delay: skipAnimation ? 0 : 0.3 }}
+              transition={{
+                duration: skipAnimation ? 0 : 0.8,
+                delay: skipAnimation ? 0 : 0.3,
+              }}
               className="hero2-nav desktop-nav"
             >
               <div className="nav-links">
@@ -124,20 +150,31 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                     className="nav-item"
                     onHoverStart={() => setHoveredIndex(index)}
                     onHoverEnd={() => setHoveredIndex(null)}
-                    initial={{ opacity: skipAnimation ? 1 : 0, y: skipAnimation ? 0 : -10 }}
+                    initial={{
+                      opacity: skipAnimation ? 1 : 0,
+                      y: skipAnimation ? 0 : -10,
+                    }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: skipAnimation ? 0 : 0.5 + index * 0.1 }}
+                    transition={{
+                      delay: skipAnimation ? 0 : 0.5 + index * 0.1,
+                    }}
                   >
                     {item.path === "/" ? (
                       <button
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
                         className="nav-link"
                       >
                         <motion.span
                           animate={{
                             y: hoveredIndex === index ? -8 : 0,
                           }}
-                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                          }}
                           className="inline-block"
                         >
                           {item.label}
@@ -154,7 +191,11 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                           animate={{
                             y: hoveredIndex === index ? -8 : 0,
                           }}
-                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                          }}
                           className="inline-block"
                         >
                           {item.label}
@@ -177,45 +218,58 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                 ))}
               </div>
 
+              {/* -------- RIGHT SIDE REGISTER / USER -------- */}
               <motion.div
-                className="nav-register"
+                className="nav-register flex items-center gap-6"
                 onHoverStart={() => setHoveredIndex(navItems.length)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                initial={{ opacity: skipAnimation ? 1 : 0, y: skipAnimation ? 0 : -10 }}
+                initial={{
+                  opacity: skipAnimation ? 1 : 0,
+                  y: skipAnimation ? 0 : -10,
+                }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: skipAnimation ? 0 : 1.2 }}
               >
-                <NavLink to="/register" className="nav-link">
-                  <motion.span
-                    animate={{
-                      y: hoveredIndex === navItems.length ? -8 : 0,
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="inline-block"
-                  >
-                    REGISTER
-                  </motion.span>
-                </NavLink>
+                {user ? (
+                  <>
+                    <span className="nav-link text-2xl font-bold">{user}</span>
 
-                <motion.span
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{
-                    opacity: hoveredIndex === navItems.length ? 1 : 0,
-                    y: hoveredIndex === navItems.length ? 0 : -5,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="nav-hindi"
-                >
-                  पंजीकरण
-                </motion.span>
+                    <button
+                      onClick={logout}
+                      className="nav-link text-red-400 font-bold"
+                    >
+                      LOGOUT
+                    </button>
+                  </>
+                ) : (
+                  <NavLink to="/register" className="nav-link">
+                    <motion.span
+                      animate={{
+                        y: hoveredIndex === navItems.length ? -8 : 0,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }}
+                      className="inline-block"
+                    >
+                      REGISTER
+                    </motion.span>
+                  </NavLink>
+                )}
               </motion.div>
             </motion.nav>
 
+            {/* -------------------- MOBILE HAMBURGER ----------------------- */}
             <motion.div
               className="mobile-menu-container"
               initial={{ opacity: skipAnimation ? 1 : 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: skipAnimation ? 0 : 0.8, delay: skipAnimation ? 0 : 0.3 }}
+              transition={{
+                duration: skipAnimation ? 0 : 0.8,
+                delay: skipAnimation ? 0 : 0.3,
+              }}
             >
               <button
                 className="hamburger-btn"
@@ -230,12 +284,15 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                   className="hamburger-line"
                 />
                 <motion.div
-                  animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                  animate={
+                    isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
+                  }
                   className="hamburger-line"
                 />
               </button>
             </motion.div>
 
+            {/* ---------------- MOBILE MENU ---------------- */}
             <AnimatePresence>
               {isMenuOpen && (
                 <motion.div
@@ -266,47 +323,47 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.1 * index }}
                         >
-                          {item.path === "/" ? (
-                            <button
-                              className="mobile-menu-item"
-                              onClick={() => {
-                                setIsMenuOpen(false);
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                              }}
-                            >
-                              <span className="mobile-menu-label">{item.label}</span>
-                              <span className="mobile-menu-hindi">{item.hindi}</span>
-                            </button>
-                          ) : (
-                            <NavLink
-                              to={item.path}
-                              className={({ isActive }) =>
-                                `mobile-menu-item ${isActive ? "active" : ""}`
-                              }
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              <span className="mobile-menu-label">{item.label}</span>
-                              <span className="mobile-menu-hindi">{item.hindi}</span>
-                            </NavLink>
-                          )}
+                          <NavLink
+                            to={item.path}
+                            className="mobile-menu-item"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            <span className="mobile-menu-label">
+                              {item.label}
+                            </span>
+                            <span className="mobile-menu-hindi">
+                              {item.hindi}
+                            </span>
+                          </NavLink>
                         </motion.div>
                       ))}
                     </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 }}
-                    >
-                      <NavLink
-                        to="/register"
-                        className="mobile-register-btn"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <span>REGISTER</span>
-                        <span className="mobile-register-hindi">पंजीकरण</span>
-                      </NavLink>
-                    </motion.div>
+                    {/* MOBILE USER / REGISTER */}
+                    <div className="mt-6">
+                      {user ? (
+                        <button
+                          onClick={() => {
+                            logout();
+                            setIsMenuOpen(false);
+                          }}
+                          className="mobile-register-btn"
+                        >
+                          <span>LOGOUT</span>
+                        </button>
+                      ) : (
+                        <NavLink
+                          to="/register"
+                          className="mobile-register-btn"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <span>REGISTER</span>
+                          <span className="mobile-register-hindi">
+                            पंजीकरण
+                          </span>
+                        </NavLink>
+                      )}
+                    </div>
                   </motion.div>
                 </motion.div>
               )}
@@ -314,15 +371,19 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
           </>
         )}
 
+        {/* ---------- CENTERED LOGO ----------- */}
         <motion.div
           className="logo-container"
           initial={{ x: 0 }}
           animate={{
-            x: (animationStage === "move" || animationStage === "main") ? "calc(-25vw)" : 0,
+            x:
+              animationStage === "move" || animationStage === "main"
+                ? "calc(-25vw)"
+                : 0,
           }}
           transition={{
             duration: skipAnimation ? 0 : 1,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         >
           <motion.img
@@ -331,7 +392,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
             className="hero2-mandala"
             initial={{
               opacity: skipAnimation ? 0.4 : 0,
-              rotate: 0
+              rotate: 0,
             }}
             animate={{
               opacity: animationStage === "circle" ? 0 : 0.8,
@@ -342,7 +403,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
               rotate: {
                 duration: 20,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
               },
             }}
           />
@@ -353,38 +414,55 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
             className="hero2-logo"
             initial={{ opacity: skipAnimation ? 1 : 0 }}
             animate={{
-              opacity: (animationStage === "logo" || animationStage === "move" || animationStage === "main") ? 1 : 0
+              opacity:
+                animationStage === "logo" ||
+                animationStage === "move" ||
+                animationStage === "main"
+                  ? 1
+                  : 0,
             }}
-            transition={{
-              duration: skipAnimation ? 0 : 1
-            }}
+            transition={{ duration: skipAnimation ? 0 : 1 }}
           />
         </motion.div>
 
+        {/* COUNTDOWN */}
         {showContent && (
           <motion.div
             className="countdown-static"
             initial={{ opacity: skipAnimation ? 1 : 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: skipAnimation ? 0 : 0.8, delay: skipAnimation ? 0 : 0.5 }}
+            transition={{
+              duration: skipAnimation ? 0 : 0.8,
+              delay: skipAnimation ? 0 : 0.5,
+            }}
           >
             <CountdownTimer targetDate={targetDate} />
           </motion.div>
         )}
 
+        {/* HERO MAIN TEXT */}
         {showContent && (
           <motion.div
             className="hero2-content"
-            initial={{ opacity: skipAnimation ? 1 : 0, y: skipAnimation ? 0 : 20 }}
+            initial={{
+              opacity: skipAnimation ? 1 : 0,
+              y: skipAnimation ? 0 : 20,
+            }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: skipAnimation ? 0 : 0.8, delay: skipAnimation ? 0 : 0.2 }}
+            transition={{
+              duration: skipAnimation ? 0 : 0.8,
+              delay: skipAnimation ? 0 : 0.2,
+            }}
           >
             <h1 className="hero2-title">ANANT KALPAVARIKSHAM</h1>
-            <p className="hero2-subtitle">-from Centuries Past to Creations Beyond-</p>
+            <p className="hero2-subtitle">
+              -from Centuries Past to Creations Beyond-
+            </p>
           </motion.div>
         )}
       </div>
 
+      {/* GALLERY BELOW HERO */}
       <div className="gallery-section">
         <GalleryGrid />
       </div>

@@ -11,6 +11,7 @@ import SponsorPage from "./pages/SponsorPage";
 import MerchPage from "./pages/MerchPage";
 import TeamPage from "./pages/TeamPage";
 import RegisterPage from "./pages/RegisterPage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer position="bottom-right"/>
       <CustomCursor />
       {/* <Navbar show={isHomePage ? showNavbar : true} /> */}
       <Routes>
