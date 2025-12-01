@@ -31,8 +31,14 @@ function RegisterPage() {
       toast.success("Registration successful! Please Login.");
       setLogin(true); // Switch to LOGIN form
     } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+       console.log(error);
+
+  const msg =
+    error?.response?.data?.message ||
+    error?.response?.data?.errors?.[0] ||
+    "Something went wrong";
+
+  toast.error(msg);
     }
   }
 
@@ -53,8 +59,14 @@ function RegisterPage() {
       localStorage.setItem("user", JSON.stringify(res.user));
       navigate("/")
     } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+        console.log(error);
+
+  const msg =
+    error?.response?.data?.message ||
+    error?.response?.data?.errors?.[0] ||
+    "Something went wrong";
+
+  toast.error(msg);
     }
   }
 
