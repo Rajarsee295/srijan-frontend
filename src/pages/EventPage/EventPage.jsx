@@ -28,8 +28,6 @@ const categories = [
 
 export default function EventPage() {
   const [activeCategory, setActiveCategory] = useState("ALL");
-  const [events, setEvents] = useState([]);
-
   const [isAdmin, setIsAdmin] = useState(() => {
     const user = JSON.parse(localStorage.getItem("user") || "null");
     return user?.is_admin === true;
@@ -37,22 +35,7 @@ export default function EventPage() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const url = activeCategory === "ALL"
-          ? "https://srijan-2026.onrender.com/api/v1/event/all"
-          : `https://srijan-2026.onrender.com/api/v1/events/category/${activeCategory}`;
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch events");
-        const data = await response.json();
-        setEvents(data);// events will be set in events,use it in frontend as needed
-      } catch(err){
-        console.error("Error fetching events:", err);
-      }
-    };
-    fetchEvents();
-  }, [activeCategory]);
+
 
 
   return (

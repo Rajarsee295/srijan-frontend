@@ -56,8 +56,25 @@ const AddEventPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submitting:", formData);
-        // navigate("/events");
+        try {
+            const response = await fetch(
+                "https://srijan-2026.onrender.com/api/v1/events/create",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            navigate("/events");
+        } catch (error) {
+            console.error("Error creating event:", error);
+            alert("Failed to create event: " + error.message);
+        }
     };
 
     const previewEvent = {

@@ -15,27 +15,22 @@ export default function Display({ category }) {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const demoEvents = [
-    { name: "REFLECTION", category: "DANCE", image: DANCE },
-    { name: "HOONKAR", category: "DRAMA", image: DRAMA },
-    { name: "SAAP TANK", category: "COMEDY", image: COMEDY },
-    { name: "DOODLE DASH", category: "ART", image: ART },
-    { name: "HARMONY", category: "MUSIC", image: MUSIC },
-    { name: "PODFEST", category: "LITERACY", image: LITERACY },
-    { name: "STORY-TELLER", category: "CINEMA", image: CINEMA },
-  ];
-
-  async function getEvents(selectedCategory) {
-    if (selectedCategory === "ALL") {
-      setEvents(demoEvents);
-      return;
-    }
-    const filtered = demoEvents.filter((ev) => ev.category === selectedCategory);
-    setEvents(filtered);
-  }
 
   useEffect(() => {
-    getEvents(category);
+    const fetchEvents = async () => {
+      try {
+        const url = category === "ALL"
+          ? "https://srijan-2026.onrender.com/api/v1/event/all"
+          : `https://srijan-2026.onrender.com/api/v1/events/category/${category}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch events");
+        const data = await response.json();
+        setEvents(data);// events will be set in events,use it in frontend as needed
+      } catch(err){
+        console.error("Error fetching events:", err);
+      }
+    };
+    fetchEvents();
   }, [category]);
 
   return (
