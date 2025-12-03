@@ -30,9 +30,9 @@ export default function EventPage() {
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
-      const userString = localStorage.getItem("user");
+      const userString = localStorage.getItem("user_1");
       if (!userString) return false;
-
+      if (userString === "undefined" || userString === "null") return false;
       const user = JSON.parse(userString);
       return Boolean(user?.is_admin);
     } catch (error) {
