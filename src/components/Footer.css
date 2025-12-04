@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/* Footer container */
+.footer {
+  background-color: #301258; /* dark maroon */
+  color: #f7c400; /* golden yellow */
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Pirata One', cursive;
+  font-size: 32px; /* base font size */
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Each section common style */
+.footer-section {
+  flex: 1 1 250px;
+  min-width: 150px;
+  text-align: left; /* Left align content inside each section */
+}
+
+/* Left section specifically */
+.footer-left {
+  min-width: 250px;
+}
+
+/* Logo */
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+/* Text styles */
+.footer-text.large {
+  color: white;
+  font-size: 32px; /* updated */
+  margin-bottom: 10px;
+}
+
+.footer-text.small {
+  color: white;
+  font-size: 32px; /* updated */
+}
+
+/* Headings */
+.footer-heading {
+  margin-bottom: 15px;
+  color: #f7c400;
+  font-size: 32px; /* updated */
+}
+
+/* List styles */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+.footer-list-item {
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 32px; /* updated */
+}
+
+/* Contact section font */
+.footer-contact .footer-text.large {
+  line-height: 1.5;
+}
+
+/* Social icons container */
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+  color: white;
+  font-size: 32px; /* updated */
+  font-weight: bold;
+}
+
+/* Social icons placeholder style */
+.footer-social-icon {
+  cursor: default;
+  font-size: 32px; /* updated */
+}
