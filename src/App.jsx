@@ -17,6 +17,9 @@ import AddEventPage from "./pages/EventPage/AddEventPage";
 import { motion } from "framer-motion";
 import textBackdropSrc from "./assets/text-backdrop.png";
 
+// Import the Footer component
+import Footer from "./components/footer";
+
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [hasPlayedAnimation, setHasPlayedAnimation] = useState(false);
@@ -43,9 +46,9 @@ function App() {
 
   return (
     <div className="App">
-      <ToastContainer position="bottom-right"/>
+      <ToastContainer position="bottom-right" />
       <CustomCursor />
-      
+
       {shouldShowBackground && (
         <>
           <div className="shared-background" />
@@ -56,25 +59,28 @@ function App() {
         </>
       )}
       <div className="content-root">
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-            <Hero2 
-              onAnimationComplete={handleAnimationComplete}
-              skipAnimation={hasPlayedAnimation}
-            />
-          } 
-        />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/events" element={<EventPage />} />
-        <Route path="/sponsors" element={<SponsorPage />} />
-        <Route path="/merchandise" element={<MerchPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/add-event" element={<AddEventPage />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Hero2
+                onAnimationComplete={handleAnimationComplete}
+                skipAnimation={hasPlayedAnimation}
+              />
+            }
+          />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/events" element={<EventPage />} />
+          <Route path="/sponsors" element={<SponsorPage />} />
+          <Route path="/merchandise" element={<MerchPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/add-event" element={<AddEventPage />} />
+        </Routes>
+
+        {/* Add Footer here */}
+        <Footer />
       </div>
     </div>
   );
