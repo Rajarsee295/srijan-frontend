@@ -1,0 +1,177 @@
+.gradient-interval {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg, #08061E 0%, #301258 50%, #5C2A9A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.interval-text-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  z-index: 10;
+}
+
+.interval-line {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(254, 208, 0, 0.6),
+    transparent
+  );
+  position: relative;
+}
+
+.interval-line::before,
+.interval-line::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #FED000;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.interval-line::before {
+  left: 0;
+}
+
+.interval-line::after {
+  right: 0;
+}
+
+.interval-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 300;
+  color: #FED000;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 30px rgba(254, 208, 0, 0.3);
+}
+
+.interval-highlight {
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #FED000 0%,
+    #FFE55C 50%,
+    #FED000 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(254, 208, 0, 0.5));
+  padding: 0 0.3em;
+}
+
+.interval-ornament {
+  font-size: 2rem;
+  color: #FED000;
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 0 15px rgba(254, 208, 0, 0.6));
+}
+
+.interval-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.interval-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #FED000 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.shooting-stars-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 208, 0, 0.8) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(254, 208, 0, 0.6);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  background: #FED000;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(254, 208, 0, 0.9);
+}
+
+.constellation-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.constellation-dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FED000;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(254, 208, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .interval-line {
+    width: 120px;
+  }
+  
+  .interval-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .interval-ornament {
+    font-size: 1.5rem;
+  }
+  
+  .shooting-star {
+    width: 60px;
+    height: 1.5px;
+  }
+  
+  .interval-particle {
+    width: 2px;
+    height: 2px;
+  }
+}

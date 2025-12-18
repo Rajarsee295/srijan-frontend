@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import GalleryPage from "./pages/Gallery";
 import EventPage from "./pages/EventPage/EventPage";
-import Hero2 from "./components/Hero/Hero2";
+import HomePage from "./pages/HomePage";
 import { Route, Routes, useLocation } from "react-router";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import SponsorPage from "./pages/SponsorPage";
@@ -60,7 +60,7 @@ function App() {
         <Route 
           path="/" 
           element={
-            <Hero2 
+            <HomePage 
               onAnimationComplete={handleAnimationComplete}
               skipAnimation={hasPlayedAnimation}
             />

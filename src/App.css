@@ -50,6 +50,7 @@ body {
 * {
   -ms-overflow-style: none;
   scrollbar-width: none; 
+  overscroll-behavior: none;
 }
 
 *::-webkit-scrollbar {
