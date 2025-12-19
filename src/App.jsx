@@ -80,7 +80,7 @@ function App() {
         </Routes>
 
         {/* Add Footer here */}
-        <Footer />
+        {!isHomePage && <Footer />}
       </div>
     </div>
   );
