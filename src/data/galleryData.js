@@ -3,7 +3,7 @@
 // Uses Vite's `import.meta.glob` so you don't need to list files manually.
 
 // use Vite's modern glob options: query to request the resolved URL and import default
-const modules = import.meta.glob('../Assets/Gallery/*.{png,jpg,jpeg}', { eager: true, query: '?url', import: 'default' })
+const modules = import.meta.glob('../Assets/Gallery/*.{png,PNG,jpg,JPG,jpeg,JPEG}', { eager: true, query: '?url', import: 'default' })
 
 // Turn into an array and sort by filename so order is predictable.
 const images = Object.entries(modules)
