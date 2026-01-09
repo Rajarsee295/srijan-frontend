@@ -19,6 +19,12 @@
   z-index: 10;
 }
 
+.interval-text-container iframe {
+  pointer-events: auto;
+  z-index: 20;
+  position: relative;
+}
+
 .interval-line {
   width: 200px;
   height: 1px;

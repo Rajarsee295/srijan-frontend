@@ -43,7 +43,7 @@ function SponsorPage() {
             <div className="sponser-circle-frame"><img src="/sponsers/realme.png" alt="Realme" /></div>
           </div>
 
-        </div>
+        
 
         {/* 🔹 Row 3 */}
         <div className="sponsers-row">
@@ -76,7 +76,8 @@ function SponsorPage() {
           <div className="sponser-circle-frame"><img src="/sponsers/gail.png" alt="GAIL" /></div>
           <div className="sponser-circle-frame"><img src="/sponsers/mg.png" alt="MG" /></div>
         </div>
-
+        
+        </div>
       </div>
     </>
   );
