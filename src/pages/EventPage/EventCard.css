@@ -381,6 +381,7 @@
 @media (max-width: 768px) {
   .event-card-wrapper {
     height: 400px;
+    max-width: 100%;
   }
 
   .card-name {
@@ -399,6 +400,8 @@
 @media (max-width: 480px) {
   .event-card-wrapper {
     height: 350px;
+    max-width: 100%;
+    min-width: 280px;
   }
 
   .card-name {

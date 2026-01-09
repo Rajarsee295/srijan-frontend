@@ -126,11 +126,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   return (
     <div>
       <div ref={containerRef} className="hero2-wrapper">
-        <motion.div className="hero2-container"
-          style={{
-            overscrollBehavior: "none",
-          }}
-        >
+        <motion.div className="hero2-container">
           <div
             className="text-backdrop"
             style={{ backgroundImage: `url(${textBackdropSrc})` }}

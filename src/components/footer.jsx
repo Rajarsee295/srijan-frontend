@@ -1,4 +1,7 @@
 import React from "react";
+import LinkedIn from '../../public/logo/linkedin.png'
+import Instagram from '../../public/logo/image.png'
+import Image from '../../public/image.png'
 import "./Footer.css";
 
 const Footer = () => {
@@ -6,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       {/* Left Section */}
       <div className="footer-section footer-left">
-        <img src="/image.png" alt="Srijan Logo" className="footer-logo" />
+        <img src={Image} alt="Srijan Logo" className="footer-logo" />
         <p className="footer-text large">
           Largest Socio-Cultural Fest
           <br />
@@ -49,7 +52,7 @@ const Footer = () => {
             aria-label="LinkedIn"
           >
             <img
-              src="/logo/linkedin.png"
+              src={LinkedIn}
               alt="LinkedIn"
               width={45}
               height={45}
@@ -63,7 +66,7 @@ const Footer = () => {
             aria-label="Instagram"
           >
             <img
-              src="/logo/image.png"
+              src={Instagram}
               alt="Instagram"
               width={45}
               height={45}
