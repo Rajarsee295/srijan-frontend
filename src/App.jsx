@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Footer from "./components/footer";
 import CurtainTransition from "./components/Curtain.jsx";
+import Passes from "./pages/Passes.jsx";  // ya jo bhi file name hai (Passes.jsx?)
 
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/Gallery";
@@ -55,7 +56,7 @@ function App() {
   }, [location.pathname]);
 
   /* ================= BACKGROUND ================= */
-  const noBackgroundRoutes = ["/"];
+  const noBackgroundRoutes = ["/","/passes"];
   const shouldShowBackground = !noBackgroundRoutes.includes(location.pathname);
 
   return (
@@ -78,24 +79,26 @@ function App() {
 
       <div className="content-root">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage
-                onAnimationComplete={handleAnimationComplete}
-                skipAnimation={hasPlayedAnimation}
-              />
-            }
-          />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/events" element={<EventPage />} />
-          <Route path="/sponsors" element={<SponsorPage />} />
-          <Route path="/merchandise" element={<MerchPage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/add-event" element={<AddEventPage />} />
-        </Routes>
+  <Route
+    path="/"
+    element={
+      <HomePage
+        onAnimationComplete={handleAnimationComplete}
+        skipAnimation={hasPlayedAnimation}
+      />
+    }
+  />
+  <Route path="/gallery" element={<GalleryPage />} />
+  <Route path="/events" element={<EventPage />} />
+  <Route path="/passes" element={<Passes/>} />  {/* ← YE NEW */}
+  <Route path="/sponsors" element={<SponsorPage />} />
+  <Route path="/merchandise" element={<MerchPage />} />
+  <Route path="/team" element={<TeamPage />} />
+  <Route path="/register" element={<RegisterPage />} />
+  <Route path="/profile" element={<Profile />} />
+  <Route path="/add-event" element={<AddEventPage />} />
+</Routes>
+
 
         {!isHomePage && <Footer />}
       </div>
