@@ -17,6 +17,7 @@ import GradientInterval from "./GradientInterval";
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },
   { path: "/events", label: "EVENTS", hindi: "कार्यक्रम" },
+  { path: "/passes", label: "PASSES", hindi: "प्रवेश-पत्र" },
   { path: "/sponsors", label: "SPONSORS", hindi: "प्रायोजक" },
   { path: "/merchandise", label: "MERCHANDISE", hindi: "वस्तुएँ" },
   { path: "/team", label: "TEAM", hindi: "टीम" },

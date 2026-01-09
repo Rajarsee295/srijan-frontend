@@ -58,11 +58,11 @@ function HomePage({ onAnimationComplete, skipAnimation }) {
           skipAnimation={skipAnimation}
         />
       </div>
-      
+
       {/* Gallery Section */}
       <div className="relative z-20 mt-[100vh]">
         <GalleryGrid />
-        <Footer/>
+        <Footer />
       </div>
 
       {/* CURTAIN ANIMATION */}
@@ -77,40 +77,40 @@ function HomePage({ onAnimationComplete, skipAnimation }) {
           }}
         >
           {/* LEFT */}
-       <motion.div
-  initial={{ x: 0 }}
-  animate={{ x: "-100%" }}
-  transition={{ duration: 2, ease: "easeInOut" }}
-  onAnimationComplete={() => {
-    setAnimationDone(true);
-    onAnimationComplete?.();
-  }}
-  style={{
-    width: "50%",
-    backgroundImage: `url(${leftImg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center right",
-    backgroundRepeat: "no-repeat",
-    backgroundColor: "#1b1035", // optional: match image bg
-  }}
-/>
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            onAnimationComplete={() => {
+              setAnimationDone(true);
+              onAnimationComplete?.();
+            }}
+            style={{
+              width: "50%",
+              backgroundImage: `url(${leftImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center right",
+              backgroundRepeat: "no-repeat",
+              backgroundColor: "#1b1035", // optional: match image bg
+            }}
+          />
 
 
           {/* RIGHT */}
-      <motion.div
-  initial={{ x: 0 }}
-  animate={{ x: "100%" }}
-  transition={{ duration: 2, ease: "easeInOut" }}
-  style={{
-    width: "50%",
-    
-    backgroundImage: `url(${rightImg})`,
-    backgroundSize:"cover",
-    backgroundPosition: "center left",
-    backgroundRepeat: "no-repeat",
-    backgroundColor: "#1b1035", // optional
-  }}
-/>
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            style={{
+              width: "50%",
+
+              backgroundImage: `url(${rightImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center left",
+              backgroundRepeat: "no-repeat",
+              backgroundColor: "#1b1035", // optional
+            }}
+          />
 
         </div>
       )}

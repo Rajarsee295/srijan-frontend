@@ -56,7 +56,7 @@ function App() {
   }, [location.pathname]);
 
   /* ================= BACKGROUND ================= */
-  const noBackgroundRoutes = ["/","/passes"];
+  const noBackgroundRoutes = ["/"];
   const shouldShowBackground = !noBackgroundRoutes.includes(location.pathname);
 
   return (
@@ -64,8 +64,6 @@ function App() {
       <ToastContainer position="bottom-right" />
       <CustomCursor />
 
-      {/* CURTAIN (OPEN ONLY) */}
-      <CurtainTransition isActive={showCurtain} />
 
       {shouldShowBackground && (
         <>

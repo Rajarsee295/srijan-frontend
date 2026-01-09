@@ -1,28 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-image: 
-    url('/bg.jpg'),
-    radial-gradient(circle at top, #351c6b 0%, #050016 60%, #02000a 100%);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-attachment: fixed, fixed;
-  color: #ffffff;
-  min-height: 100vh;
-  opacity: 0.89;
-}
-
 /* PAGE */
 .passes-page {
   min-height: 100vh;
   width: 100%;
   padding: 2.5rem 0;
   position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 /* SECTION CONTAINER – FIGMA WIDTH */
@@ -33,9 +19,10 @@ body {
   padding-left: 48px;
   padding-right: 48px;
 }
+
 .pass-button.top-buy {
   position: absolute;
-         /* 👈 first bullet ke level pe */
+  /* 👈 first bullet ke level pe */
   right: 20px;
   background: #FFD400;
   color: #000;
@@ -44,16 +31,6 @@ body {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-}
-
-/* BANNER */
-.banner-img {
-  width: 100%;
-  height: auto;
-   margin-top: 60px;
-  margin-bottom: 60px;
-  border-radius: 8px;
-  
 }
 
 /* CARD WRAPPER */
@@ -80,7 +57,7 @@ body {
   border-radius: inherit;
 }
 
-.passes-section > * {
+.passes-section>* {
   position: relative;
   z-index: 1;
 }
@@ -94,8 +71,8 @@ body {
 }
 
 /* CENTER THIRD CARD */
-.basic-grid .passes-grid > *:nth-child(3),
-.advanced-grid .passes-grid > *:nth-child(3) {
+.basic-grid .passes-grid>*:nth-child(3),
+.advanced-grid .passes-grid>*:nth-child(3) {
   grid-column: 1 / -1;
   justify-self: center;
   /* max-width: 350px; */
@@ -120,6 +97,14 @@ body {
   position: relative;
 }
 
+.pass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+}
+
 .pass-image {
   position: relative;
   height: 180px;
@@ -135,11 +120,12 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.75rem;
 }
+
 .pass-content {
   padding: 1.2rem 1.4rem;
 
@@ -148,14 +134,14 @@ body {
   justify-content: space-between;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(49, 22, 53, 0) 0%,
-      rgba(49, 22, 53, 0.75) 70%
-    );
+      rgba(49, 22, 53, 0.75) 70%);
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
 .pass-name {
   font-size: 1.2rem;
   font-weight: 800;
@@ -292,6 +278,7 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
+
   .basic-grid .passes-grid,
   .advanced-grid .passes-grid {
     grid-template-columns: 1fr;
@@ -299,6 +286,7 @@ body {
 }
 
 @media (max-width: 640px) {
+
   .basic-grid,
   .advanced-grid {
     padding-left: 16px;
@@ -308,5 +296,136 @@ body {
   .basic-grid .passes-grid,
   .advanced-grid .passes-grid {
     gap: 24px;
+  }
+}
+
+.banner-custom {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 30px 60px;
+  background: linear-gradient(
+    90deg,
+    rgba(148, 120, 179, 0.0) 0%,
+    rgba(69, 37, 98, 0.5) 20%,
+    rgba(69, 37, 98, 0.5) 80%,
+    rgba(83, 62, 106, 0.0) 100%
+  );
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 208, 0, 0.6) 50%,
+    transparent 100%
+  );
+}
+
+.banner-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 208, 0, 0.6) 50%,
+    transparent 100%
+  );
+}
+
+.banner-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #FED000;
+  letter-spacing: 0.15em;
+  margin: 0;
+  text-shadow:
+    0 0 20px rgba(254, 208, 0, 0.6),
+    0 0 40px rgba(166, 83, 156, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.banner-star {
+  font-size: 1.5rem;
+  color: #FED000;
+  opacity: 0.8;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.banner-star.left {
+  animation-delay: 0s;
+}
+
+.banner-star.left-inner {
+  animation-delay: 0.5s;
+}
+
+.banner-star.right-inner {
+  animation-delay: 1s;
+}
+
+.banner-star.right {
+  animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-custom {
+    padding: 20px 30px;
+    gap: 12px;
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .banner-star {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-custom {
+    padding: 15px 20px;
+    gap: 8px;
+  }
+
+  .banner-title {
+    font-size: 1.3rem;
+  }
+
+  .banner-star {
+    font-size: 0.8rem;
   }
 }
