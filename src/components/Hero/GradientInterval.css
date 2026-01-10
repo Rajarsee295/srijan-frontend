@@ -181,3 +181,36 @@
     height: 2px;
   }
 }
+
+@media (max-width: 905px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 1300px) {
+  .size {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1110px) {
+  .size {
+    width: 400px;
+  }
+}
+
+@media (max-width: 905px) {
+  .size {
+    width: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .size {
+    width: 400px;
+    height: 340px;
+    margin-top: -20px;
+  }
+}

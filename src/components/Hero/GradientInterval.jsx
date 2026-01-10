@@ -106,10 +106,10 @@ const GradientInterval = () => {
           OF SRIJAN
         </motion.h3>
 
-          <div className='flex flex-wrap gap-20 mt-10'>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-hgwXanM7Qw?si=wQgR4P_R9l-7msrW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div className='flex flex-wrap gap-10 justify-center mt-10 '>
+            <iframe  width="600px" className='p-5 m-0 aspect-video size' src="https://www.youtube.com/embed/-hgwXanM7Qw?si=wQgR4P_R9l-7msrW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9KluVGTXHl0?si=K-AyZBUs_HhMiB8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe className='hide-on-mobile p-5 aspect-video size'  width="600px"  src="https://www.youtube.com/embed/9KluVGTXHl0?si=K-AyZBUs_HhMiB8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         
 
