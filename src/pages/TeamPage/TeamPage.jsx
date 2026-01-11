@@ -35,28 +35,43 @@ import img1 from "./ProfileImage/11.jpg"
 
 const teamSections = [
   {
-    title: "Core Team",
+    title: "CORE TEAM",
     members: [
       {
         name: "MADHULIKA",
         surname: "GUPTA",
         role: "Convenor",
         img: img1,
-        linkedin: "https://linkedin.com",      
-        instagram: "https://instagram.com",    
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
       },
       {
         name: "SURESH",
         surname: "KUMAR",
         role: "Co-Convenor",
         img: img1,
-        linkedin: "https://linkedin.com",      
-        instagram: "https://instagram.com",    
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
       },
-
+      {
+        name: "PRIYANSH",
+        surname: "KEDIA",
+        role: "President, Students' Gymkhana",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "SIDDU",
+        surname: "BHUKYA",
+        role: "General Secretary Media and Culture",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      }
     ],
   },
-  
+
 
   {
     title: "Co-ordinators",
@@ -66,8 +81,8 @@ const teamSections = [
         surname: "KUMAR",
         role: "Coordinator",
         img: img1,
-        linkedin: "https://linkedin.com",      
-        instagram: "https://instagram.com",    
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
       },
       {
         name: "ATHARV",
@@ -93,15 +108,15 @@ const teamSections = [
       {
         name: "Arman",
         surname: "Bhattacharjee",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
       {
-        name: "BUDDARAJU SAI",
-        surname: "ABHIRAMA VARMA",
-        role: "Co-Head",        
+        name: "ABHIRAM",
+        surname: "BUDDARAJU",
+        role: "Co-Head",
         img: Abhiram,
         linkedin: "https://www.linkedin.com/in/saiabhiramavarmabuddaraju/",
         instagram: "https://www.instagram.com/abhiram_2765/",
@@ -109,10 +124,48 @@ const teamSections = [
       {
         name: "SOHAN",
         surname: "ROY CHOUDHURY",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
+      },
+    ],
+  },
+  {
+    title: "EVENT TEAM",
+    members: [
+      {
+        name: "UDBHAV",
+        surname: "SAI",
+        role: "Head",
+        img: UDBHAV,
+        linkedin: "https://www.linkedin.com/in/udbhav-sai-kukkadapu-a36a93287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        instagram: "https://www.instagram.com/saii30_?igsh=MThzbG8yMW81NzEzcw%3D%3D&utm_source=qr",
+      },
+      {
+        name: "SAKSHAM",
+        surname: "KUMAR",
+        role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+
+      {
+        name: "SHASHWAT",
+        surname: "MANDAL",
+        role: "Co-Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "ADISHREE",
+        surname: "KUNDU",
+        role: "Co-Head",
+        img: Adishree_Kundu,
+        linkedin: "https://www.linkedin.com/in/adishree-kundu-607764358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagram: "https://www.instagram.com/adishr_eee?igsh=OWJ3aG5hbzQ4ZDZv",
       },
     ],
   },
@@ -166,8 +219,8 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "BUKHYA",
-        surname: "HEMANTH",
+        name: "HEMANTH",
+        surname: "BUKHYA",
         role: "Co-Head ",
         img: img1,
         linkedin: "https://linkedin.com",
@@ -191,76 +244,21 @@ const teamSections = [
       },
     ],
   },
-
-  {
-    title: "EVENT TEAM",
-    members: [
-      {
-        name: "UDBHAV",
-        surname: "SAI",
-        role: "Head",        
-        img: UDBHAV,
-        linkedin: "https://www.linkedin.com/in/udbhav-sai-kukkadapu-a36a93287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        instagram: "https://www.instagram.com/saii30_?igsh=MThzbG8yMW81NzEzcw%3D%3D&utm_source=qr",
-      },
-      {
-        name: "SAKSHAM",
-        surname: "KUMAR",
-        role: "Head",        
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      
-      {
-        name: "SHASHWAT",
-        surname: "MANDAL",
-        role: "Co-Head",        
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      // {
-      //   name: "DAKSH",
-      //   surname: "DIXIT",
-      //   role: "Co-Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
-      {
-        name: "ADISHREE",
-        surname: "KUNDU",
-        role: "Co-Head",        
-        img: Adishree_Kundu,
-        linkedin: "https://www.linkedin.com/in/adishree-kundu-607764358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagram: "https://www.instagram.com/adishr_eee?igsh=OWJ3aG5hbzQ4ZDZv",
-      },
-    ],
-  },
   {
     title: "DESIGN TEAM",
     members: [
       {
         name: "DAKSH",
         surname: "_",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-      // {
-      //   name: "YUG",
-      //   surname: "KALIRAMAN",
-      //   role: "Co-Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
       {
         name: "PRIYANSH",
         surname: "SHEKHAR",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -268,7 +266,7 @@ const teamSections = [
       {
         name: "DIKSHA",
         surname: "RANI",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Diksha,
         linkedin: "https://www.linkedin.com/in/diksha-rani-474b15287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://www.instagram.com/_._dikshaaa._?igsh=MTF1dzY3eHZuZTE5eg==",
@@ -281,7 +279,7 @@ const teamSections = [
       {
         name: "ADHAYAYAN ",
         surname: "KUSHAGRA SHANDILYA ",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -289,63 +287,23 @@ const teamSections = [
       {
         name: "SURENDRA",
         surname: "SINGH",
-        role: "Head",        
+        role: "Head",
         img: Surendra_Mojawat,
         linkedin: "https://www.linkedin.com/in/surendra-singh-574432287",
         instagram: "https://www.instagram.com/surendra_singh819?igsh=YTdxajJtMGpsejlx",
       },
-      // {
-      //   name: "MUSKAN",
-      //   surname: "PRIYA",
-      //   role: "Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
-      // {
-      //   name: "BHANOTHU",
-      //   surname: "SAI PRASAD ",
-      //   role: "Head",        
-      //   img: Sai_Prasad,
-      //   linkedin: "https://www.linkedin.com/in/b-sai-prasad-b5b527288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      //   instagram: "https://www.instagram.com/saiprasad12321?igsh=MTNna3hqY2ZuMHgxOA==",
-      // },
-      // {
-      //   name: "PALAK",
-      //   surname: "_",
-      //   role: "Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
       {
         name: "AKANSH",
         surname: "SINHA",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-      // {
-      //   name: "MOHAMMAD",
-      //   surname: "NAVEED",
-      //   role: "Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
-      // {
-      //   name: "TANISHQ",
-      //   surname: "UNHALE",
-      //   role: "Head",        
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
       {
         name: "SWAGAT",
         surname: "JENA",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -358,7 +316,7 @@ const teamSections = [
       {
         name: "BAKSHI",
         surname: "ARYAN SRIVASTAVA",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -366,15 +324,15 @@ const teamSections = [
       {
         name: "Keerti",
         surname: "Gupta",
-        role: "Head",        
+        role: "Head",
         img: Kirti_Gupta,
         linkedin: "http://www.linkedin.com/in/kirti-gupta-4491642a1",
         instagram: "https://www.instagram.com/kirti4711?igsh=MXFidXo2aHV4aWo4aw==",
       },
       {
-        name: "AZMEERA",
-        surname: "JENTHULAL",
-        role: "Co-Head",        
+        name: "JENTHULAL",
+        surname: "AZMEERA",
+        role: "Co-Head",
         img: Azmeera_jenthulal,
         linkedin: "https://www.linkedin.com/in/azmeera-jenthulal-",
         instagram: "https://www.instagram.com/mr.john118?igsh=cXV2YmttemFtYTVw",
@@ -382,7 +340,7 @@ const teamSections = [
       {
         name: "LAKHAN",
         surname: "RAJPUROHIT",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Lakhan_singh,
         linkedin: "https://www.linkedin.com/in/lakhan-rajpurohit-99a0b5287",
         instagram: "https://www.instagram.com/_lucky_0206?igsh=dWxiaXplbzFxb2Y2",
@@ -390,15 +348,15 @@ const teamSections = [
       {
         name: "DEBAYAN",
         surname: "CHOWDHURY",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Debayan_Chowdhury,
         linkedin: "https://www.linkedin.com/in/debayan-roy-chowdhury-374208272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://instagram.com",
       },
       {
-        name: "KOLLI",
-        surname: "PRANEET",
-        role: "Co-Head",        
+        name: "PRANEET",
+        surname: "KOLLI",
+        role: "Co-Head",
         img: Kolli_Praneeth,
         linkedin: "https://www.linkedin.com/in/hema-siva-naga-praneeth-kolli-74a864287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://www.instagram.com/mr_praneeth.07?igsh=MXJ3bXd3cjJ1MXBmMQ==",
@@ -411,15 +369,15 @@ const teamSections = [
       {
         name: "KESHAV",
         surname: "JHA",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
       {
-        name: "JAGANA",
-        surname: "VENKATESH KUMAR",
-        role: "Co-Head",        
+        name: "VENKATESH KUMAR",
+        surname: "JAGANA",
+        role: "Co-Head",
         img: Jagana,
         linkedin: "https://www.linkedin.com/in/jagana-venkatesh-kumar-969365296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://www.instagram.com/venky_.31._?igsh=ZGF4aDBvb2lka2I1",
@@ -432,15 +390,15 @@ const teamSections = [
       {
         name: "OJAS",
         surname: "RAJ",
-        role: "Head",        
+        role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
       {
-        name: "YAMALI",
-        surname: "SAI TEJASWI",
-        role: "Co-Head ",        
+        name: "SAI TEJASWI",
+        surname: "YAMALI",
+        role: "Co-Head ",
         img: Yamali,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -448,7 +406,7 @@ const teamSections = [
       {
         name: "ASHMITA",
         surname: "CHOUDHURY",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Ashmita,
         linkedin: "https://www.linkedin.com/in/ashmita-choudhury-97063a287/",
         instagram: "https://www.instagram.com/ashmita__12/",
@@ -456,7 +414,7 @@ const teamSections = [
       {
         name: "PRAGATI",
         surname: "KUMARI",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Pragati_Kumari,
         linkedin: "https://www.linkedin.com/in/pragati-kumari-10262b2b1/",
         instagram: "https://www.instagram.com/pragatikumari2328?igsh=MXYxdThmZ2E5NmVxcg==",
@@ -469,7 +427,7 @@ const teamSections = [
       {
         name: "NITIN",
         surname: "_",
-        role: "Head",        
+        role: "Head",
         img: Nitin,
         linkedin: "https://www.linkedin.com/in/nitin-kumar-b42b9029a",
         instagram: "https://www.instagram.com/_nitin.25?igsh=emVjc3A0OTcxNDlt",
@@ -477,7 +435,7 @@ const teamSections = [
       {
         name: "ANUJ",
         surname: "KUMAR AGARWAL",
-        role: "Co-Head ",        
+        role: "Co-Head ",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -485,15 +443,15 @@ const teamSections = [
       {
         name: "ADITYA",
         surname: "SHAH ",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: Adityashah,
         linkedin: "https://www.linkedin.com/in/aditya-shah-38a2a9287",
         instagram: "https://www.instagram.com/insane_.adi",
       },
       {
-        name: "GAJULA",
-        surname: "HEENA KOUSAR",
-        role: "Co-Head",        
+        name: "HEENA KOUSAR",
+        surname: "GAJULA",
+        role: "Co-Head",
         img: Gajula_Kousar,
         linkedin: "https://www.linkedin.com/in/gajula-heena-kousar-5b4571289/",
         instagram: "https://www.instagram.com/heena__176?igsh=N2Y2NGxjdWZ6d250&utm_source=qr",
@@ -506,7 +464,7 @@ const teamSections = [
       {
         name: "ANEESH",
         surname: "VERMA",
-        role: "Head",        
+        role: "Head",
         img: Aneesh_Verma,
         linkedin: "https://www.linkedin.com/in/aneesh-verma-68a395287",
         instagram: "https://www.instagram.com/mastermindverma2005/",
@@ -514,7 +472,7 @@ const teamSections = [
       {
         name: "SANATAN",
         surname: "BAGARAIA",
-        role: "Head ",        
+        role: "Head ",
         img: SANATAN_BAGARIA,
         linkedin: "https://www.linkedin.com/in/sanatanbagaria/",
         instagram: "https://www.instagram.com/sanatan_bagaria/",
@@ -522,7 +480,7 @@ const teamSections = [
       {
         name: "SHAURYA",
         surname: "BOTHRA",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -530,7 +488,7 @@ const teamSections = [
       {
         name: "RAJEEV",
         surname: "LOCHAN",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -543,15 +501,15 @@ const teamSections = [
       {
         name: "SHREYANSH",
         surname: "BHUSHAN",
-        role: "Head",        
+        role: "Head",
         img: Shreyansh_Bhushan,
         linkedin: "https://www.linkedin.com/in/shreyansh2005/",
         instagram: "https://www.instagram.com/shreyanshh_13/",
       },
       {
-        name: "GUGULOTH",
-        surname: "KUMAR",
-        role: "Head ",        
+        name: "KUMAR",
+        surname: "GUGULOTH",
+        role: "Head ",
         img: Guguloth,
         linkedin: "https://linkedin.com",
         instagram: "https://www.instagram.com/kumar__official__7?igsh=MTNtNnRwY3ZudjZyYQ==",
@@ -559,7 +517,7 @@ const teamSections = [
       {
         name: "PARNEET",
         surname: "NAIN",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -567,15 +525,15 @@ const teamSections = [
       {
         name: "DHARMPAL",
         surname: "GURJAL",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
       {
-        name: "ADARI",
-        surname: "ABHISHEK",
-        role: "Co-Head",        
+        name: "ABHISHEK",
+        surname: "ADARI",
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -583,7 +541,7 @@ const teamSections = [
       {
         name: "TAROON",
         surname: "SHARMA",
-        role: "Co-Head",        
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -608,7 +566,7 @@ function TeamPage() {
       <div className="max-w-7xl mx-auto px-6 mt-16 space-y-20">
         {teamSections.map((section, sectionIndex) => (
           <div key={sectionIndex}>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -619,29 +577,29 @@ function TeamPage() {
               {section.title}
             </motion.h2>
 
-            
+
             <div className="flex flex-wrap justify-center gap-10">
               {section.members.map((member, index) => (
                 <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.15 }}
-                    whileHover={{ scale: 1.07 }}
-                    className="group relative rounded-2xl p-[2px] pb-8
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  whileHover={{ scale: 1.07 }}
+                  className="group relative rounded-2xl p-[2px] pb-8
                         w-[260px] sm:w-[280px]
                         bg-gradient-to-br from-yellow-400 to-yellow-600
                         shadow-[0_0_20px_rgba(255,200,0,0.5)]
                         hover:shadow-[0_0_20px_rgba(255,200,0,0.7)]"
-                  >
-                    <div
-                      className="relative rounded-2xl overflow-hidden flex flex-col justify-end
+                >
+                  <div
+                    className="relative rounded-2xl overflow-hidden flex flex-col justify-end
                                 h-[350px] bg-center bg-cover"
-                      style={{ backgroundImage: `url(${member.img})` }}
-                    >
+                    style={{ backgroundImage: `url(${member.img})` }}
+                  >
 
-                    
+
                     <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
                       {member.linkedin && (
                         <a
@@ -674,16 +632,16 @@ function TeamPage() {
                       )}
                     </div>
 
-                   
+
                     <div
-                      className="absolute inset-0 bg-gradient-to-t 
+                      className="absolute inset-0 bg-gradient-to-t
                                  from-[#08061E]/95 via-[#08061E]/60 to-transparent
                                  z-10"
                     ></div>
 
-                    
+
                     <div className="relative z-20 p-6 text-center">
-                      
+
                       <h3
                         className="text-[1.3rem] font-bold tracking-wider text-[#FFD85A] mb-0
                                   drop-shadow-[0_0_8px_rgba(255,215,100,0.7)]
@@ -694,7 +652,7 @@ function TeamPage() {
                         {member.name}
                       </h3>
 
-                      
+
                       <p
                         className="text-[#FFD85A] text-[1rem] font-bold
                             mt-1
@@ -703,7 +661,7 @@ function TeamPage() {
                             sm:opacity-0 sm:translate-y-1
                             sm:group-hover:opacity-100 sm:group-hover:translate-y-0
                             transition-all duration-300"
-                        style={{ fontFamily: "'Cinzel Decorative', cursive" }}          
+                        style={{ fontFamily: "'Cinzel Decorative', cursive" }}
                       >
                         {member.surname}
                       </p>
@@ -712,7 +670,7 @@ function TeamPage() {
                         {member.role}
                       </p>
 
-                      
+
                     </div>
                   </div>
                 </motion.div>

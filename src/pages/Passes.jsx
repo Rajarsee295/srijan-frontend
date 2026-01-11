@@ -19,9 +19,11 @@ const passes = {
       image: rhythmBasic,
       features: [
         'Access to all Events',
+      ],
+      exclusions: [
         'No Food & Accommodation',
         'No Star Night',
-      ],
+      ]
     },
     {
       name: 'GROOVE',
@@ -31,9 +33,11 @@ const passes = {
       image: grooveBasic,
       features: [
         'Access to all Events',
+      ],
+      exclusions: [
         'No Food & Accommodation',
         'No Star Night',
-      ],
+      ]
     },
     {
       name: 'CARNIVAL',
@@ -43,9 +47,11 @@ const passes = {
       image: carnivalBasic,
       features: [
         'Access to all Events',
-        'No Food & Accommodation',
         'Access to Star Night',
       ],
+      exclusions: [
+        'No Food & Accommodation',
+      ]
     },
   ],
   advanced: [
@@ -58,8 +64,10 @@ const passes = {
       features: [
         'Access to all Events',
         'With Food & Accommodation',
-        'No Star Night',
       ],
+      exclusions: [
+        'No Star Night',
+      ]
     },
     {
       name: 'GROOVE',
@@ -70,8 +78,10 @@ const passes = {
       features: [
         'Access to all Events',
         'With Food & Accommodation',
-        'No Star Night',
       ],
+      exclusions: [
+        'No Star Night',
+      ]
     },
     {
       name: 'CARNIVAL',
@@ -84,15 +94,71 @@ const passes = {
         'With Food & Accommodation',
         'Access to Star Night',
       ],
+      exclusions: [
+
+      ]
     },
   ],
 };
 
 
 function PassCard({ name, level, days, price, features, image }) {
-  const handleBuy = () => {
-    alert(`${name} ${level} - ${price} checkout!`);
+  const handleBuy = async (e) => {
+
+    const res = await fetch("https://srijan-2026.onrender.com/api/payments/create-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "amount":price,
+      })
+    });
+
+    const order = await res.json();
+
+
+    var options = {
+      "key": import.meta.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
+      "amount": order.amount, // Amount is in currency subunits.
+      "currency": "INR",
+      "name": "Acme Corp", //your business name
+      "description": "Test Transaction",
+      "image": "https://example.com/your_logo",
+      "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "handler": function (response) {
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+      },
+      "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+        "name": "Gaurav Kumar", //your customer's name
+        "email": "gaurav.kumar@example.com",
+        "contact": "+919876543210"  //Provide the customer's phone number for better conversion rates
+      },
+      "notes": {
+        "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+        "color": "#3399cc"
+      }
+    };
+    var rzp1 = new window.Razorpay(options);
+    rzp1.on('payment.failed', function (response) {
+      alert(response.error.code);
+      alert(response.error.description);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
+    });
+
+    rzp1.open();
+    e.preventDefault();
   };
+
+
 
   return (
     <div className="pass-card transition-all duration-300">
@@ -116,11 +182,13 @@ function PassCard({ name, level, days, price, features, image }) {
             <li key={index}>{item}</li>
           ))}
         </ul>
+        <ul className="pass-exclusions">
+          {exclusions.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
 
       </div>
-
-
-
     </div>
   );
 }

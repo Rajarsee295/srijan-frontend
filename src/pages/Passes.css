@@ -244,6 +244,23 @@
   font-weight: bold;
 }
 
+.pass-exclusions {
+  list-style: none;
+  text-align: left;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+
+.pass-exclusions li::before {
+  content: '✗';
+  margin-right: 0.6rem;
+  color: #ff0000;
+  font-weight: bold;
+}
+
 /* FOOTER */
 .pass-footer {
   display: flex;
