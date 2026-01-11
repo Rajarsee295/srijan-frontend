@@ -35,7 +35,7 @@ import img1 from "./ProfileImage/11.jpg"
 
 const teamSections = [
   {
-    title: "Core Team",
+    title: "CORE TEAM",
     members: [
       {
         name: "MADHULIKA",
@@ -53,7 +53,22 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-
+      {
+        name: "PRIYANSH",
+        surname: "KEDIA",
+        role: "President, Students' Gymkhana",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "SIDDU",
+        surname: "BHUKYA",
+        role: "General Secretary Media and Culture",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      }
     ],
   },
 
@@ -113,6 +128,44 @@ const teamSections = [
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
+      },
+    ],
+  },
+  {
+    title: "EVENT TEAM",
+    members: [
+      {
+        name: "UDBHAV",
+        surname: "SAI",
+        role: "Head",
+        img: UDBHAV,
+        linkedin: "https://www.linkedin.com/in/udbhav-sai-kukkadapu-a36a93287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        instagram: "https://www.instagram.com/saii30_?igsh=MThzbG8yMW81NzEzcw%3D%3D&utm_source=qr",
+      },
+      {
+        name: "SAKSHAM",
+        surname: "KUMAR",
+        role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+
+      {
+        name: "SHASHWAT",
+        surname: "MANDAL",
+        role: "Co-Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "ADISHREE",
+        surname: "KUNDU",
+        role: "Co-Head",
+        img: Adishree_Kundu,
+        linkedin: "https://www.linkedin.com/in/adishree-kundu-607764358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagram: "https://www.instagram.com/adishr_eee?igsh=OWJ3aG5hbzQ4ZDZv",
       },
     ],
   },
@@ -188,45 +241,6 @@ const teamSections = [
         img: Prioma_Chakraborty,
         linkedin: "http://www.linkedin.com/in/priomachakraborty98",
         instagram: "https://www.instagram.com/priomachakraborty?igsh=MW00cXA5NnpwNzF2Mg==",
-      },
-    ],
-  },
-
-  {
-    title: "EVENT TEAM",
-    members: [
-      {
-        name: "UDBHAV",
-        surname: "SAI",
-        role: "Head",
-        img: UDBHAV,
-        linkedin: "https://www.linkedin.com/in/udbhav-sai-kukkadapu-a36a93287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        instagram: "https://www.instagram.com/saii30_?igsh=MThzbG8yMW81NzEzcw%3D%3D&utm_source=qr",
-      },
-      {
-        name: "SAKSHAM",
-        surname: "KUMAR",
-        role: "Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-
-      {
-        name: "SHASHWAT",
-        surname: "MANDAL",
-        role: "Co-Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "ADISHREE",
-        surname: "KUNDU",
-        role: "Co-Head",
-        img: Adishree_Kundu,
-        linkedin: "https://www.linkedin.com/in/adishree-kundu-607764358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagram: "https://www.instagram.com/adishr_eee?igsh=OWJ3aG5hbzQ4ZDZv",
       },
     ],
   },
