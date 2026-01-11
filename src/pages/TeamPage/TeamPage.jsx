@@ -634,7 +634,7 @@ function TeamPage() {
 
 
                     <div
-                      className="absolute inset-0 bg-gradient-to-t 
+                      className="absolute inset-0 bg-gradient-to-t
                                  from-[#08061E]/95 via-[#08061E]/60 to-transparent
                                  z-10"
                     ></div>
