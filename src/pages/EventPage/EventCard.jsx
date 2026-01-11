@@ -31,7 +31,7 @@ export default function EventCard({ event, index, onClick }) {
         >
           <div className="card-front-inner">
             <div className="card-image">
-              <img src={event.image} alt={event.name} />
+              <img src={event.bg} alt={event.event_name} />
               <div className="card-gradient" />
             </div>
 
@@ -40,10 +40,10 @@ export default function EventCard({ event, index, onClick }) {
                 className="category-badge"
                 whileHover={{ scale: 1.05 }}
               >
-                <span>{event.category}</span>
+                <span>{event.event_category}</span>
               </motion.div>
 
-              <h3 className="card-name">{event.name}</h3>
+              <h3 className="card-name">{event.event_name}</h3>
 
               <p className="card-hint">Hover to see details</p>
             </div>
@@ -81,10 +81,10 @@ export default function EventCard({ event, index, onClick }) {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <span>{event.category}</span>
+                <span>{event.event_category}</span>
               </motion.div>
 
-              <h3 className="back-title">{event.name}</h3>
+              <h3 className="back-title">{event.event_name}</h3>
 
               <div className="back-divider" />
             </div>
@@ -92,7 +92,7 @@ export default function EventCard({ event, index, onClick }) {
             <div className="back-content">
               <div className="back-description">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {event.description}
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export default function EventCard({ event, index, onClick }) {
 
               <div className="back-detail-item full">
                 <p className="detail-label">VENUE</p>
-                <p className="detail-value">TBA</p>
+                <p className="detail-value">{event.venue}</p>
               </div>
             </div>
 

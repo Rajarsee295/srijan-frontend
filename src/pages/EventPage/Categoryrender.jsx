@@ -54,6 +54,7 @@ export default function Display({ category }) {
             event={event}
             index={index}
             onClick={() => setSelectedEvent(event)}
+            eventData={selectedEvent}
           />
         ))}
       </div>

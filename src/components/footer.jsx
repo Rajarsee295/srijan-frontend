@@ -3,6 +3,7 @@ import LinkedIn from '../../public/logo/linkedin.png'
 import Instagram from '../../public/logo/image.png'
 import Image from '../../public/image.png'
 import "./Footer.css";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -18,14 +19,14 @@ const Footer = () => {
         <p className="footer-text small">Feb 6th - 8th</p>
       </div>
 
-      {/* Quick Links */}
+      {/* Quick Links  */}
       <div className="footer-section footer-links">
         <h3 className="footer-heading">Quick Links</h3>
         <ul className="footer-list">
-          <li className="footer-list-item">Home</li>
-          <li className="footer-list-item">Events</li>
-          <li className="footer-list-item">Sponsors</li>
-          <li className="footer-list-item">Teams</li>
+          <li className="footer-list-item"><Link to="/">Home</Link></li>
+          <li className="footer-list-item"><Link to="/events">Events</Link></li>
+          <li className="footer-list-item"><Link to="/sponsors">Sponsors</Link></li>
+          <li className="footer-list-item"><Link to="/team">Teams</Link></li>
         </ul>
       </div>
 
@@ -46,7 +47,7 @@ const Footer = () => {
         <h3 className="footer-heading">Follow Us</h3>
         <div className="footer-social-icons">
           <a
-            href="https://linkedin.com"
+            href="https://in.linkedin.com/company/srijaniitismdhn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -60,7 +61,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/srijaniitism?igsh=OWYzd3NyaDA0a3U1"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

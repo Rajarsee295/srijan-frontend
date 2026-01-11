@@ -19,9 +19,11 @@ const passes = {
       image: rhythmBasic,
       features: [
         'Access to all Events',
+      ],
+      exclusions: [
         'No Food & Accommodation',
         'No Star Night',
-      ],
+      ]
     },
     {
       name: 'GROOVE',
@@ -31,9 +33,11 @@ const passes = {
       image: grooveBasic,
       features: [
         'Access to all Events',
+      ],
+      exclusions: [
         'No Food & Accommodation',
         'No Star Night',
-      ],
+      ]
     },
     {
       name: 'CARNIVAL',
@@ -43,9 +47,11 @@ const passes = {
       image: carnivalBasic,
       features: [
         'Access to all Events',
-        'No Food & Accommodation',
         'Access to Star Night',
       ],
+      exclusions: [
+        'No Food & Accommodation',
+      ]
     },
   ],
   advanced: [
@@ -58,8 +64,10 @@ const passes = {
       features: [
         'Access to all Events',
         'With Food & Accommodation',
-        'No Star Night',
       ],
+      exclusions: [
+        'No Star Night',
+      ]
     },
     {
       name: 'GROOVE',
@@ -70,8 +78,10 @@ const passes = {
       features: [
         'Access to all Events',
         'With Food & Accommodation',
-        'No Star Night',
       ],
+      exclusions: [
+        'No Star Night',
+      ]
     },
     {
       name: 'CARNIVAL',
@@ -84,6 +94,9 @@ const passes = {
         'With Food & Accommodation',
         'Access to Star Night',
       ],
+      exclusions: [
+
+      ]
     },
   ],
 };
@@ -169,11 +182,13 @@ function PassCard({ name, level, days, price, features, image }) {
             <li key={index}>{item}</li>
           ))}
         </ul>
+        <ul className="pass-exclusions">
+          {exclusions.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
 
       </div>
-
-
-
     </div>
   );
 }
