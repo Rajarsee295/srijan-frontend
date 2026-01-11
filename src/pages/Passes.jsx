@@ -106,7 +106,7 @@ function PassCard({ name, level, days, price, features, image }) {
 
 
     var options = {
-      "key": "rzp_test_S1qxG3nMDqsO48", // Enter the Key ID generated from the Dashboard
+      "key": import.meta.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       "amount": order.amount, // Amount is in currency subunits.
       "currency": "INR",
       "name": "Acme Corp", //your business name
