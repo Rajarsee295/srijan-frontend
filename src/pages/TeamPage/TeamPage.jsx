@@ -30,7 +30,7 @@ import Aneesh_Verma from "./ProfileImage/Aneesh_Verma.jpeg"
 import Prioma_Chakraborty from "./ProfileImage/Prioma_Chakraborty.jpeg"
 import Gajula_Kousar from "./ProfileImage/Gajula_Kousar.jpeg"
 import SANATAN_BAGARIA from "./ProfileImage/SANATAN_BAGARIA.jpeg"
-import img1 from "./ProfileImage/image_2.png"
+import img1 from "./ProfileImage/11.jpg"
 
 
 const teamSections = [
@@ -38,15 +38,15 @@ const teamSections = [
     title: "Core Team",
     members: [
       {
-        name: "SHAUMYA",
-        surname: "KUMAR",
+        name: "MADHULIKA",
+        surname: "GUPTA",
         role: "Convenor",
         img: img1,
         linkedin: "https://linkedin.com",      
         instagram: "https://instagram.com",    
       },
       {
-        name: "SHAUMYA",
+        name: "SURESH",
         surname: "KUMAR",
         role: "Co-Convenor",
         img: img1,

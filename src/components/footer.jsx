@@ -15,7 +15,7 @@ const Footer = () => {
           <br />
           Of IIT(ISM) Dhanbad
         </p>
-        <p className="footer-text small">Jan 31st - Feb 1st, 2nd</p>
+        <p className="footer-text small">Feb 6th - 8th</p>
       </div>
 
       {/* Quick Links */}
