@@ -98,13 +98,13 @@ export default function EventCard({ event, index, onClick }) {
 
               <div className="back-details-grid">
                 <div className="back-detail-item">
-                  <p className="detail-label">DATE</p>
+                  <p className="detail-label">PRIZE</p>
                   <p className="detail-value">TBA</p>
                 </div>
-                <div className="back-detail-item">
+                {/* <div className="back-detail-item">
                   <p className="detail-label">TIME</p>
                   <p className="detail-value">TBA</p>
-                </div>
+                </div> */}
               </div>
 
               <div className="back-detail-item full">

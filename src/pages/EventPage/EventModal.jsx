@@ -113,7 +113,7 @@ const EventModal = ({ isOpen, onClose, eventData }) => {
                 </p>
               </motion.div>
 
-              {eventData.rules && eventData.rules.filter(r => r).length > 0 ? (
+              {/* {eventData.rules && eventData.rules.filter(r => r).length > 0 ? (
                 <motion.div
                   className="event-modal-section"
                   initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ const EventModal = ({ isOpen, onClose, eventData }) => {
                   </h4>
                   <p className="event-modal-text">N/A</p>
                 </motion.div>
-              )}
+              )} */}
 
               {eventData.coordinator_names &&
                eventData.coordinator_names.filter(n => n).length > 0 ? (

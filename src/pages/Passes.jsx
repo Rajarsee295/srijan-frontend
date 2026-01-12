@@ -102,10 +102,10 @@ const passes = {
 };
 
 
-function PassCard({ name, level, days, price, features, image }) {
+function PassCard({ name, level, days, price, features, image, exclusions }) {
   const handleBuy = async (e) => {
 
-    const res = await fetch("https://srijan-2026.onrender.com/api/v1/payments/create-order", {
+    const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -119,7 +119,7 @@ function PassCard({ name, level, days, price, features, image }) {
 
 
     var options = {
-      "key": import.meta.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
+      "key": import.meta.env.VITE_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       "amount": order.amount, // Amount is in currency subunits.
       "currency": "INR",
       "name": "Acme Corp", //your business name

@@ -12,15 +12,11 @@ function MerchPage() {
       name: "t-shirt",
       frontImage: tshirtFront,
       backImage: tshirtBack,
-      description:
-        "Master all four elements of style in this Avatar oversized tee! Perfect for when you're out there trying to save the world (or just grabbing coffee ⚡). Style Tip: Pair it with relaxed-fit pants or shorts for that avatar state of comfort.",
     },
     {
       name: "hoodie",
       frontImage: hoodieFront,
       backImage: hoodieBack,
-      description:
-        "Master all four elements of style in this Avatar oversized tee! Perfect for when you're out there trying to save the world (or just grabbing coffee ⚡). Style Tip: Pair it with relaxed-fit pants or shorts for that avatar state of comfort.",
     },
   ];
 
