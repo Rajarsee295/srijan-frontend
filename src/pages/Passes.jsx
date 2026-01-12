@@ -102,7 +102,7 @@ const passes = {
 };
 
 
-function PassCard({ name, level, days, price, features, image, exclusions }) {
+function PassCard({ name, level, days, price, features, image , exclusions }) {
   const handleBuy = async (e) => {
 
     const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
