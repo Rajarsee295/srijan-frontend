@@ -105,13 +105,13 @@ const passes = {
 function PassCard({ name, level, days, price, features, image }) {
   const handleBuy = async (e) => {
 
-    const res = await fetch("https://srijan-2026.onrender.com/api/payments/create-order", {
+    const res = await fetch("https://srijan-2026.onrender.com/api/v1/payments/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "amount":price,
+        "amount":parseInt(price.replace("₹","")),
       })
     });
 
