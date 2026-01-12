@@ -102,10 +102,10 @@ const passes = {
 };
 
 
-function PassCard({ name, level, days, price, features, image }) {
+function PassCard({ name, level, days, price, features, image , exclusions }) {
   const handleBuy = async (e) => {
 
-    const res = await fetch("https://srijan-2026.onrender.com/api/v1/payments/create-order", {
+    const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
