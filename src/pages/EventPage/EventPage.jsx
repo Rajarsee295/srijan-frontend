@@ -19,9 +19,9 @@ const categories = [
   { icon: DANCE, categoryname: "DANCE" },
   { icon: ART, categoryname: "ART" },
   { icon: MUSIC, categoryname: "MUSIC" },
-  { icon: LITERACY, categoryname: "LITERACY" },
-  { icon: DRAMA, categoryname: "DRAMA" },
-  { icon: CINEMA, categoryname: "CINEMA" },
+  { icon: LITERACY, categoryname: "LITERARY" },
+  { icon: DRAMA, categoryname: "THEATRE" },
+  { icon: CINEMA, categoryname: "FILM" },
   { icon: FASHION, categoryname: "FASHION" },
   { icon: COMEDY, categoryname: "COMEDY" },
 ];

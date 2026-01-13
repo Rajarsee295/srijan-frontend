@@ -15,7 +15,7 @@ const passes = {
       name: 'RHYTHM',
       level: 'BASIC',
       days: '1 DAY',
-      price: '₹499',
+      price: '₹500',
       image: rhythmBasic,
       features: [
         'Access to all Events',
@@ -104,75 +104,160 @@ const passes = {
 
 function PassCard({ name, level, days, price, features, image , exclusions }) {
   const handleBuy = async (e) => {
-
-    const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "amount":parseInt(price.replace("₹","")),
-      })
-    });
-
-    const order = await res.json();
-
-
-    var options = {
-      "key": import.meta.env.VITE_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
-      "amount": order.amount, // Amount is in currency subunits.
-      "currency": "INR",
-      "name": "Acme Corp", //your business name
-      "description": "Test Transaction",
-      "image": "https://example.com/your_logo",
-      "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "handler": function (response) {
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature)
-      },
-      "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
-        "name": "Gaurav Kumar", //your customer's name
-        "email": "gaurav.kumar@example.com",
-        "contact": "+919876543210"  //Provide the customer's phone number for better conversion rates
-      },
-      "notes": {
-        "address": "Razorpay Corporate Office"
-      },
-      "theme": {
-        "color": "#3399cc"
-      }
-    };
-    var rzp1 = new window.Razorpay(options);
-    rzp1.on('payment.failed', function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
-    });
-
-    rzp1.open();
     e.preventDefault();
+    
+    try {
+      const button = e.target;
+      const originalText = button.textContent;
+      button.textContent = 'Processing...';
+      button.disabled = true;
+
+      const packageMap = {
+        'RHYTHM-BASIC': 'one-day-without-food',
+        'GROOVE-BASIC': 'two-day-without-food',
+        'CARNIVAL-BASIC': 'three-day-without-food',
+        'RHYTHM-ADVANCED': 'one-day-with-food',
+        'GROOVE-ADVANCED': 'two-day-with-food',
+        'CARNIVAL-ADVANCED': 'three-day-with-food',
+      };
+
+      const packageKey = `${name}-${level}`;
+      const packageType = packageMap[packageKey];
+      const isStarNight = name === 'CARNIVAL';
+
+      if (!packageType) {
+        throw new Error('Invalid package selection');
+      }
+
+      const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          amount: parseInt(price.replace("₹", "").replace(",", "")),
+          packag: packageType,
+          star_night: isStarNight
+        })
+      });
+
+      if (!res.ok) {
+        let errorMessage = `Server error: ${res.status}`;
+        try {
+          const errorData = await res.json();
+          errorMessage = errorData.message || errorMessage;
+        } catch (e) {
+        }
+        throw new Error(errorMessage);
+      }
+
+      const responseData = await res.json();
+
+      if (!responseData.success) {
+        throw new Error(responseData.message || 'Failed to create order');
+      }
+
+      const order = responseData.order;
+
+      if (!order || !order.id) {
+        throw new Error('Invalid order response from server');
+      }
+
+      var options = {
+        "key": import.meta.env.VITE_RAZORPAY_KEY_ID,
+        "amount": order.amount,
+        "currency": "INR",
+        "name": "Srijan 2026",
+        "description": `${name} Pass - ${level}`,
+        "image": "https://example.com/your_logo",
+        "order_id": order.id,
+        "handler": async function (response) {
+          try {
+            const verifyRes = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/verifypayment", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              credentials: 'include',
+              body: JSON.stringify({
+                order_id: response.razorpay_order_id,
+                payment_id: response.razorpay_payment_id,
+                signature: response.razorpay_signature
+              })
+            });
+
+            if (!verifyRes.ok) {
+              throw new Error('Payment verification failed');
+            }
+
+            const verifyData = await verifyRes.json();
+
+            if (!verifyData.success) {
+              throw new Error('Payment verification failed');
+            }
+
+            alert('Payment successful! Your pass has been activated.');
+            window.location.reload();
+          } catch (error) {
+            console.error('Payment verification error:', error);
+            alert(`Payment completed but verification failed: ${error.message}\nPlease contact support with order ID: ${response.razorpay_order_id}`);
+          }
+        },
+        "prefill": {
+          "name": "",
+          "email": "",
+          "contact": ""
+        },
+        "notes": {
+          "pass_type": `${name} - ${level}`,
+          "days": days
+        },
+        "theme": {
+          "color": "#FED000"
+        },
+        "modal": {
+          "ondismiss": function() {
+            button.textContent = originalText;
+            button.disabled = false;
+          }
+        }
+      };
+
+      var rzp1 = new window.Razorpay(options);
+      
+      rzp1.on('payment.failed', function (response) {
+        console.error('Payment failed:', response.error);
+        alert(`Payment failed: ${response.error.description}\nReason: ${response.error.reason}`);
+        button.textContent = originalText;
+        button.disabled = false;
+      });
+
+      rzp1.open();
+      button.textContent = originalText;
+      button.disabled = false;
+
+    } catch (error) {
+      console.error('Error in payment process:', error);
+      alert(`Error: ${error.message || 'Something went wrong. Please try again.'}`);
+      
+      const button = e.target;
+      button.textContent = 'BUY NOW';
+      button.disabled = false;
+    }
   };
-
-
 
   return (
     <div className="pass-card transition-all duration-300">
-
-      {/* TOP IMAGE */}
       <div className="pass-image">
         <img src={image} alt={`${name} pass`} />
       </div>
 
-      {/* TRANSPARENT BODY */}
       <div className="pass-content">
         <div className="pass-footer">
-
-          <button className="pass-button top-buy" onClick={handleBuy}>
+          <button className="pass-button top-buy" onClick={()=>{
+            alert('Passes coming soon!')
+          }}>
             BUY NOW
           </button>
         </div>
@@ -187,7 +272,6 @@ function PassCard({ name, level, days, price, features, image , exclusions }) {
             <li key={index}>{item}</li>
           ))}
         </ul>
-
       </div>
     </div>
   );

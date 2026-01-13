@@ -113,6 +113,36 @@ const EventModal = ({ isOpen, onClose, eventData }) => {
                 </p>
               </motion.div>
 
+              <motion.div
+                className="event-modal-section"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 }}
+              >
+                <h4 className="event-modal-section-title">
+                  <span className="section-icon">📅</span>
+                  Date
+                </h4>
+                <p className="event-modal-text">
+                  {eventData.date || "N/A"}
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="event-modal-section"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <h4 className="event-modal-section-title">
+                  <span className="section-icon">🏆</span>
+                  Prize
+                </h4>
+                <p className="event-modal-text">
+                  {eventData.prize || "N/A"}
+                </p>
+              </motion.div>
+
               {/* {eventData.rules && eventData.rules.filter(r => r).length > 0 ? (
                 <motion.div
                   className="event-modal-section"

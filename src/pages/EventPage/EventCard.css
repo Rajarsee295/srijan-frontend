@@ -311,7 +311,8 @@
 }
 
 .back-details-grid {
-  /* display: flex-grow; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
