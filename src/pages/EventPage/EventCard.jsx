@@ -31,7 +31,7 @@ export default function EventCard({ event, index, onClick }) {
         >
           <div className="card-front-inner">
             <div className="card-image">
-              <img src={event.bg} alt={event.event_name} />
+              <img src={event.bg_image_url} alt={event.event_name} />
               <div className="card-gradient" />
             </div>
 
@@ -98,12 +98,12 @@ export default function EventCard({ event, index, onClick }) {
 
               <div className="back-details-grid">
                 <div className="back-detail-item">
-                  <p className="detail-label">DATE</p>
-                  <p className="detail-value">TBA</p>
+                  <p className="detail-label">PRIZE</p>
+                  <p className="detail-value">{event.prize}</p>
                 </div>
                 <div className="back-detail-item">
-                  <p className="detail-label">TIME</p>
-                  <p className="detail-value">TBA</p>
+                  <p className="detail-label">DATE</p>
+                  <p className="detail-value">{event.date}</p>
                 </div>
               </div>
 

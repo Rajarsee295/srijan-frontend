@@ -31,48 +31,11 @@ import Prioma_Chakraborty from "./ProfileImage/Prioma_Chakraborty.jpeg"
 import Gajula_Kousar from "./ProfileImage/Gajula_Kousar.jpeg"
 import SANATAN_BAGARIA from "./ProfileImage/SANATAN_BAGARIA.jpeg"
 import img1 from "./ProfileImage/11.jpg"
+import Sohan from "./ProfileImage/Sohan.jpg"
+import Arman from "./ProfileImage/Arman.jpg"
 
 
 const teamSections = [
-  {
-    title: "CORE TEAM",
-    members: [
-      {
-        name: "MADHULIKA",
-        surname: "GUPTA",
-        role: "Convenor",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "SURESH",
-        surname: "KUMAR",
-        role: "Co-Convenor",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "PRIYANSH",
-        surname: "KEDIA",
-        role: "President, Students' Gymkhana",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "SIDDU",
-        surname: "BHUKYA",
-        role: "General Secretary Media and Culture",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      }
-    ],
-  },
-
-
   {
     title: "Co-ordinators",
     members: [
@@ -109,9 +72,9 @@ const teamSections = [
         name: "Arman",
         surname: "Bhattacharjee",
         role: "Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
+        img: Arman,
+        linkedin: "https://www.linkedin.com/in/arman-bhattacharjee/",
+        instagram: "https://www.instagram.com/k.o.n_._/",
       },
       {
         name: "ABHIRAM",
@@ -123,9 +86,9 @@ const teamSections = [
       },
       {
         name: "SOHAN",
-        surname: "ROY CHOUDHURY",
+        surname: "ROY CHOWDHURY",
         role: "Co-Head",
-        img: img1,
+        img: Sohan,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
@@ -188,14 +151,6 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-      {
-        name: "JATIN",
-        surname: "_",
-        role: "Co-Head",
-        img: Jatin,
-        linkedin: "https://www.linkedin.com/in/jatin-b-575947287",
-        instagram: "https://instagram.com",
-      }
     ],
   },
 
@@ -226,22 +181,22 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-      {
-        name: "SAYON",
-        surname: "DAS",
-        role: "Co-Head ",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "PRIOMA",
-        surname: "CHAKRABORTY ",
-        role: "Co-Head",
-        img: Prioma_Chakraborty,
-        linkedin: "http://www.linkedin.com/in/priomachakraborty98",
-        instagram: "https://www.instagram.com/priomachakraborty?igsh=MW00cXA5NnpwNzF2Mg==",
-      },
+      // {
+      //   name: "SAYON",
+      //   surname: "DAS",
+      //   role: "Co-Head ",
+      //   img: img1,
+      //   linkedin: "https://linkedin.com",
+      //   instagram: "https://instagram.com",
+      // },
+      // {
+      //   name: "PRIOMA",
+      //   surname: "CHAKRABORTY ",
+      //   role: "Co-Head",
+      //   img: Prioma_Chakraborty,
+      //   linkedin: "http://www.linkedin.com/in/priomachakraborty98",
+      //   instagram: "https://www.instagram.com/priomachakraborty?igsh=MW00cXA5NnpwNzF2Mg==",
+      // },
     ],
   },
   {
@@ -251,6 +206,14 @@ const teamSections = [
         name: "DAKSH",
         surname: "_",
         role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "SAUMYA",
+        surname: "BAMRARA",
+        role: "Co-Head",
         img: img1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
@@ -477,22 +440,22 @@ const teamSections = [
         linkedin: "https://www.linkedin.com/in/sanatanbagaria/",
         instagram: "https://www.instagram.com/sanatan_bagaria/",
       },
-      {
-        name: "SHAURYA",
-        surname: "BOTHRA",
-        role: "Co-Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
-      {
-        name: "RAJEEV",
-        surname: "LOCHAN",
-        role: "Co-Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
-      },
+      // {
+      //   name: "SHAURYA",
+      //   surname: "BOTHRA",
+      //   role: "Co-Head",
+      //   img: img1,
+      //   linkedin: "https://linkedin.com",
+      //   instagram: "https://instagram.com",
+      // },
+      // {
+      //   name: "RAJEEV",
+      //   surname: "LOCHAN",
+      //   role: "Co-Head",
+      //   img: img1,
+      //   linkedin: "https://linkedin.com",
+      //   instagram: "https://instagram.com",
+      // },
     ],
   },
   {
@@ -548,11 +511,56 @@ const teamSections = [
       },
     ],
   },
+  {
+    title: "CORE TEAM",
+    members: [
+      {
+        name: "PROF. MADHULIKA",
+        surname: "GUPTA",
+        role: "Convenor",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "PROF. SURESH",
+        surname: "KUMAR",
+        role: "Co-Convenor",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "PRIYANSH",
+        surname: "KEDIA",
+        role: "President, Students' Gymkhana",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "NAKSHATRA",
+        surname: "SINGH JHALA",
+        role: "Chairperson, Students' Gymkhana",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "SIDDU",
+        surname: "BHUKYA",
+        role: "General Secretary Media and Culture",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      }
+    ],
+  },
 ];
 
 function TeamPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from transparen-[#08061E] via-[#301258] to-[#48286f]  pb-24">
+    <div className="min-h-screen bg-linear-to-b from transparen-[#08061E] via-[#301258] to-[#48286f]  pb-24">
       <PageHeader
         title="TEAM"
         subtitle="Explore the vibrant spectrum of cultural celebrations"
@@ -587,9 +595,9 @@ function TeamPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                   whileHover={{ scale: 1.07 }}
-                  className="group relative rounded-2xl p-[2px] pb-8
+                  className="group relative rounded-2xl p-0.5 pb-8
                         w-[260px] sm:w-[280px]
-                        bg-gradient-to-br from-yellow-400 to-yellow-600
+                        bg-linear-to-br from-yellow-400 to-yellow-600
                         shadow-[0_0_20px_rgba(255,200,0,0.5)]
                         hover:shadow-[0_0_20px_rgba(255,200,0,0.7)]"
                 >
@@ -634,7 +642,7 @@ function TeamPage() {
 
 
                     <div
-                      className="absolute inset-0 bg-gradient-to-t
+                      className="absolute inset-0 bg-linear-to-t
                                  from-[#08061E]/95 via-[#08061E]/60 to-transparent
                                  z-10"
                     ></div>

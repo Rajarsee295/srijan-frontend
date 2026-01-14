@@ -106,12 +106,81 @@ const GradientInterval = () => {
           OF SRIJAN
         </motion.h3>
 
-          <div className='flex flex-wrap gap-10 justify-center mt-10 '>
+        {/* <div className='flex flex-wrap gap-10 justify-center mt-10 '>
             <iframe  width="600px" className='p-5 m-0 aspect-video size' src="https://www.youtube.com/embed/-hgwXanM7Qw?si=wQgR4P_R9l-7msrW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
             <iframe className='hide-on-mobile p-5 aspect-video size'  width="600px"  src="https://www.youtube.com/embed/9KluVGTXHl0?si=K-AyZBUs_HhMiB8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        
+          </div> */}
+
+        <div className='flex flex-wrap gap-10 justify-center my-10'>
+          <motion.div
+            className="video-card-wrapper"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            whileHover={{ scale: 1.05, rotateY: 0 }}
+            style={{
+              perspective: "1500px",
+              transformStyle: "preserve-3d"
+            }}
+          >
+            <div
+              className="video-card"
+              style={{
+                transform: "rotateY(8deg)",
+                transformStyle: "preserve-3d"
+              }}
+            >
+              <div className="video-frame">
+                <iframe
+                  width="600px"
+                  className='p-5 m-0 aspect-video size'
+                  src="https://www.youtube.com/embed/-hgwXanM7Qw?si=wQgR4P_R9l-7msrW"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="video-card-wrapper hide-on-mobile"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            whileHover={{ scale: 1.05, rotateY: 0 }}
+            style={{
+              perspective: "1500px",
+              transformStyle: "preserve-3d"
+            }}
+          >
+            <div
+              className="video-card"
+              style={{
+                transform: "rotateY(-8deg)",
+                transformStyle: "preserve-3d"
+              }}
+            >
+              <div className="video-frame">
+                <iframe
+                  className='p-5 aspect-video size'
+                  width="600px"
+                  src="https://www.youtube.com/embed/9KluVGTXHl0?si=K-AyZBUs_HhMiB8g"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         <motion.div
           className="interval-line bottom"

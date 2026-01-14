@@ -1,59 +1,27 @@
 import PageHeader from "../components/PageHeader/PageHeader";
 import { motion } from "framer-motion";
 import MerchCard from "../components/MerchCard";
-import TShirtBack from "../assets/TShirt_Back.jpeg"
-import leftImg from "../assets/left.svg";
-import rightImg from "../assets/right.svg";
-
+import tshirtFront from "../../public/tshirtFront.png"
+import tshirtBack from "../../public/tshirtBack.png"
+import hoodieFront from "../../public/hoodieFront.png"
+import hoodieBack from "../../public/hoodieBack.png"
 
 function MerchPage() {
   const demoMerchs = [
     {
       name: "t-shirt",
-      image:
-        TShirtBack,
-      description:
-        "Master all four elements of style in this Avatar oversized tee! Perfect for when you're out there trying to save the world (or just grabbing coffee ⚡). Style Tip: Pair it with relaxed-fit pants or shorts for that avatar state of comfort.",
+      frontImage: tshirtFront,
+      backImage: tshirtBack,
     },
-    // {
-    //   name: "jacket",
-    //   image:
-    //     "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1759337902_9837494.jpg?w=480&dpr=2",
-    //   description:
-    //     "A streetwear staple that’s roomy, comfortable, and statement-ready. Great for layering over tees, hoodies, or even sweatshirts. Style Tip: Add skinny jeans or cargos to balance out the oversized fit.",
-    // },
-    // {
-    //   name: "hoodie",
-    //   image:
-    //     "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1758793855_1776968.jpg?w=480&dpr=2",
-    //   description:
-    //     "Believe it! Get your hands on this hoodie that could withstand a Rasengan (but we don't recommend testing that). Created for the men who know their jutsu and aren't afraid to show their anime allegiance.Style Tip: Rock this anime essential with cargo pants and high-tops.",
-    // },
-    // {
-    //   name: "oversized t-shirt",
-    //   image:
-    //     "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1759926522_2643336.jpg?w=480&dpr=2",
-    //   description:
-    //     "Official Licensed Stranger Things Oversized T-Shirt. Shop for Stranger Things: Upside Down Spray Oversized T-Shirts at The Souled Store.",
-    // },
-    // {
-    //   name: "oversized-hoodie",
-    //   image:
-    //     "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1763185851_1111524.jpg?w=480&dpr=2",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    // },
+    {
+      name: "hoodie",
+      frontImage: hoodieFront,
+      backImage: hoodieBack,
+    },
   ];
-
- 
 
   return (
     <div className="pb-30">
-
-       
-      
-
-
       <PageHeader
         title="MERCHANDISE"
         subtitle="Explore the vibrant spectrum of cultural celebrations"
@@ -73,7 +41,7 @@ function MerchPage() {
             viewport={{ once: true }}
             className="w-85"
           >
-            <MerchCard event={event} index={i} onClick={() => {}} />
+            <MerchCard event={event} index={i} onClick={() => { }} />
           </motion.div>
         ))}
       </div>

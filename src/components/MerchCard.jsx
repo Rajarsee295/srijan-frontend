@@ -1,158 +1,174 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import TShirt from "../assets/TShirt.jpeg"
 
 export default function MerchCard({ event, index, onClick }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleBuyNow = (e) => {
+    e.stopPropagation();
+    setShowComingSoon(true);
+  };
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.4, delay: index * 0.1 }}
-        className="h-[450px] perspective-1000"
-        onHoverStart={() => setIsFlipped(true)}
-        onHoverEnd={() => setIsFlipped(false)}
-      >
+      <div className="flex flex-col gap-4">
         <motion.div
-          className="relative w-full h-full cursor-pointer"
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
-          transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-          style={{ transformStyle: "preserve-3d" }}
-          onClick={onClick}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          className="h-[500px] perspective-1000"
+          onMouseEnter={() => setIsFlipped(true)}
+          onMouseLeave={() => setIsFlipped(false)}
+          onClick={handleFlip}
         >
           <motion.div
-            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
-            style={{ backfaceVisibility: "hidden" }}
-            whileHover={{
-              boxShadow: "0px 8px 30px rgba(254, 208, 0, 0.4)",
-            }}
+            className="relative w-full h-full cursor-pointer"
+            animate={{ rotateY: isFlipped ? 180 : 0 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+            style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="relative w-full h-full">
-              <img
-                src={event.image}
-                alt={event.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-[#08061E] via-[#301258]/10 to-transparent" />
+            <motion.div
+              className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-linear-to-br from-[#301258] via-[#4A1B7F] to-[#5C2A9A] border-2 border-[#FED000]/20"
+              style={{ backfaceVisibility: "hidden" }}
+              whileHover={{
+                boxShadow: "0px 8px 30px rgba(254, 208, 0, 0.4)",
+                borderColor: "rgba(254, 208, 0, 0.4)",
+              }}
+            >
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-[#FED000]/30 rounded-tl-2xl" />
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-[#FED000]/30 rounded-tr-2xl" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-4 border-l-4 border-[#FED000]/30 rounded-bl-2xl" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-[#FED000]/30 rounded-br-2xl" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-bold font-['Cinzel_Decorative'] text-[#FED000] drop-shadow-lg">
-                  {event.name}
-                </h3>
-
-                <p className="text-sm text-[#E3CDEC] mt-2 font-['Cinzel_Decorative'] opacity-90">
-                  Hover to see details
-                </p>
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#FED000] rounded-full" />
+                <div className="absolute bottom-10 right-10 w-24 h-24 border-2 border-[#FED000] rounded-full" />
               </div>
 
-              <div className="absolute inset-4 pointer-events-none">
-                <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#FED000] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#FED000] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#FED000] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#FED000] opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
-            style={{
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-              background:
-                "linear-gradient(135deg, #301258 0%, #5C2A9A 50%, #301258 100%)",
-            }}
-          >
-            <div className="relative w-full h-full p-8 flex flex-col">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-32 h-32 border-4 border-[#FED000] rounded-full -mr-16 -mt-16" />
-                <div className="absolute bottom-0 left-0 w-24 h-24 border-4 border-[#FED000] rounded-full -ml-12 -mb-12" />
-              </div>
-
-              <div className="relative z-10 text-center mb-6">
-                <h3 className="text-2xl font-bold font-['Cinzel_Decorative'] text-[#FED000]">
-                  {event.name}
-                </h3>
-
-                <div className="w-16 h-1 bg-linear-to-r from-transparent via-[#FED000] to-transparent mx-auto mt-3" />
-              </div>
-
-              <div className="relative z-10 flex-1 space-y-4 h-50">
-                <div className="bg-[#08061E]/30 backdrop-blur-sm rounded-xl p-4 border border-[#FED000]/30 h-50 flex flex-col justify-center">
-                  <p className="text-[#E3CDEC] text-xs leading-relaxed font-['Cinzel_Decorative'] ">
-                    {event.description}
-                  </p>
+              <div className="relative w-full h-full flex flex-col items-center justify-center p-6">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-80 h-80 bg-[#FED000] rounded-full blur-3xl opacity-25" />
+                </div>
+                <div className="relative z-10 flex items-center justify-center w-full">
+                  <img
+                    src={event.frontImage}
+                    alt={`${event.name} front`}
+                    className="max-w-full max-h-[500px] scale-125 object-contain drop-shadow-[0_0_40px_rgba(254,208,0,0.6)]"
+                  />
                 </div>
               </div>
+            </motion.div>
+            <motion.div
+              className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-linear-to-br from-[#301258] via-[#4A1B7F] to-[#5C2A9A] border-2 border-[#FED000]/20"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+              }}
+            >
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-[#FED000]/30 rounded-tl-2xl" />
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-[#FED000]/30 rounded-tr-2xl" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-4 border-l-4 border-[#FED000]/30 rounded-bl-2xl" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-[#FED000]/30 rounded-br-2xl" />
+              
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-10 right-10 w-32 h-32 border-2 border-[#FED000] rounded-full" />
+                <div className="absolute bottom-10 left-10 w-24 h-24 border-2 border-[#FED000] rounded-full" />
+              </div>
 
-              <motion.button
-                whileHover={{
-                  scale: 1.02,
-                  backgroundColor: "#FED000",
-                  boxShadow: "0 0 25px rgba(254, 208, 0, 0.6)",
-                }}
-                whileTap={{ scale: 0.98 }}
-                className="relative z-10 mt-4 w-full bg-transparent border-2 border-[#FED000] text-[#FED000] py-3 rounded-xl font-['Cinzel_Decorative'] font-extrabold text-l transition-all shadow-lg hover:text-[#08061E]"
-                // for now.. it open's a "merch coming soon.." modal
-                onClick={() => {
-                  setSelectedEvent(true);
-                }}
-              >
-                Buy Now
-              </motion.button>
-              <motion.button
-                whileHover={{
-                  scale: 1.02,
-                  backgroundColor: "#FED000",
-                  boxShadow: "0 0 25px rgba(254, 208, 0, 0.6)",
-                }}
-                whileTap={{ scale: 0.98 }}
-                className="relative z-10 mt-4 w-full bg-transparent border-2 border-[#FED000] text-[#FED000] py-3 rounded-xl font-['Cinzel_Decorative'] font-bold text-sm transition-all shadow-lg hover:text-[#08061E]"
-                // for now.. it open's a "merch coming soon.." modal
-                onClick={() => {
-                  setSelectedEvent(true);
-                }}
-              >
-                3D VIEW
-              </motion.button>
-            </div>
+              <div className="relative w-full h-full flex flex-col items-center justify-center p-6">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-80 h-80 bg-[#FED000] rounded-full blur-3xl opacity-25" />
+                </div>
+
+                <div className="relative z-10 flex items-center justify-center w-full">
+                  <img
+                    src={event.backImage}
+                    alt={`${event.name} back`}
+                    className="max-w-full max-h-[500px] scale-125 object-contain drop-shadow-[0_0_40px_rgba(254,208,0,0.6)]"
+                  />
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/*Popup*/}
-      {selectedEvent && (
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0 0 30px rgba(254, 208, 0, 0.8)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          className="relative w-full bg-linear-to-r from-[#FED000] via-[#FFE55C] to-[#FED000] text-[#08061E] py-4 rounded-xl font-['Cinzel_Decorative'] font-bold text-xl transition-all shadow-[0_0_20px_rgba(254,208,0,0.5)] hover:shadow-[0_0_40px_rgba(254,208,0,0.8)] overflow-hidden group"
+          onClick={handleBuyNow}
+        >
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+            Buy Now
+          </span>
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+        </motion.button>
+      </div>
+
+      {showComingSoon && (
         <motion.div
           key="modal"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-200"
-          onClick={() => setSelectedEvent(null)}
+          onClick={() => setShowComingSoon(false)}
         >
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.7, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#08061E]/80 text-[#FED000] rounded-xl p-6 shadow-2xl border border-[#FED000] w-[400px] sm:w-[450px]"
+            className="bg-linear-to-br from-[#301258] to-[#5C2A9A] text-[#FED000] rounded-2xl p-8 shadow-2xl border-2 border-[#FED000] w-[90%] max-w-[450px] relative overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-center text-2xl font-['Cinzel_Decorative'] mt-4 font-bold pb-5 pt-5">
-              {/* MERCH COMING SOON.... */}
-              <img src={TShirt} alt="tshirt" className="rounded-xl shadow-[#FED000]/50 shadow-xl hover:scale-103 hover:shadow-[#FED000]/80 transition-all duration-200" />
-            </h2>
+            <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-[#FED000]/50 rounded-tl-2xl" />
+            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-[#FED000]/50 rounded-br-2xl" />
 
-            <button
-              onClick={() => setSelectedEvent(false)}
-              className="mt-4 w-full border border-[#FED000] text-[#FED000] py-2 rounded-lg hover:bg-[#FED000] hover:text-black transition"
-            >
-              Close
-            </button>
+            <div className="relative z-10">
+              <h2 className="text-center text-3xl font-['Cinzel_Decorative'] font-bold pb-4 drop-shadow-[0_0_10px_rgba(254,208,0,0.5)]">
+                Merch Coming Soon...
+              </h2>
+              <p className="text-center text-[#E3CDEC] font-['Cinzel_Decorative'] text-lg mb-6">
+                Stay tuned for our exclusive merchandise!
+              </p>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(254, 208, 0, 0.8)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowComingSoon(false)}
+                className="w-full bg-linear-to-r from-[#FED000] via-[#FFE55C] to-[#FED000] text-[#08061E] py-3 rounded-lg font-['Cinzel_Decorative'] font-bold text-lg shadow-[0_0_20px_rgba(254,208,0,0.5)]"
+              >
+                Close
+              </motion.button>
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -21,7 +21,7 @@ export default function Display({ category }) {
       try {
         const url = category === "ALL"
           ? "https://srijan-2026.onrender.com/api/v1/event/all"
-          : `https://srijan-2026.onrender.com/api/v1/events/category/${category}`;
+          : `https://srijan-2026.onrender.com/api/v1/event/category/${category}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to fetch events");
         const data = await response.json();
@@ -35,7 +35,7 @@ export default function Display({ category }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 px-32">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 sm:px-8 md:px-16 lg:px-32">
         {events.length === 0 && (
           <motion.p
             key="no-data"
@@ -50,7 +50,7 @@ export default function Display({ category }) {
 
         {events.map((event, index) => (
           <EventCard
-            key={event.name}
+            key={index}
             event={event}
             index={index}
             onClick={() => setSelectedEvent(event)}
