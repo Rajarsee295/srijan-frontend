@@ -33,6 +33,24 @@ import SANATAN_BAGARIA from "./ProfileImage/SANATAN_BAGARIA.jpeg"
 import img1 from "./ProfileImage/11.jpg"
 import Sohan from "./ProfileImage/Sohan.jpg"
 import Arman from "./ProfileImage/Arman.jpg"
+import Rohit from "./ProfileImage/Rohit.jpg"
+import Sekhar from "./ProfileImage/Sekhar.jpg"
+import Aagam from "./ProfileImage/Aagam.jpg"
+import Bhumi from "./ProfileImage/Bhumi.jpg"
+import Adari from "./ProfileImage/Adari.jpg"
+import Atharv1 from "./ProfileImage/Atharv1.jpeg"
+import Tanishka from "./ProfileImage/Tanishka.jpeg"
+import Suryansh from "./ProfileImage/Suryansh.jpg"
+import Varshitha from "./ProfileImage/Varshitha.jpg"
+import Sayon from "./ProfileImage/Sayon.jpg"
+import Swagat from "./ProfileImage/Swagat.jpg"
+import Dhanya from "./ProfileImage/Dhanya.jpg"
+import Samiksha from "./ProfileImage/Samiksha.jpg"
+import devang from "./ProfileImage/devang.jpeg"
+import divyanshu from "./ProfileImage/divyanshu.jpeg"
+import sawan from "./ProfileImage/sawan.jpg"
+import Harsh from "./ProfileImage/Harsh.jpg"
+import Yash from "./ProfileImage/Yash.jpg"
 
 
 const teamSections = [
@@ -92,6 +110,111 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
+      {
+        name: "ROHIT",
+        surname: "Guleria",
+        role: " Co-head",
+        img: Rohit,
+        linkedin: "https://www.linkedin.com/in/rohit--guleria",
+        instagram: "https://www.instagram.com/ro_guleria",
+      },
+      {
+        name: "Devang ",
+        surname: "Sharma",
+        role: "Member",
+        img:devang,
+        linkedin: "https://www.linkedin.com/in/devang772",
+        instagram: "https://www.instagram.com/devang772?igsh=MTd6ZjA5ZnFrdGVvNw==",
+      },
+      {
+        name: "Divyanshu",
+        surname: "Choubey",
+        role: "Member",
+        img:divyanshu,
+        linkedin: "https://www.linkedin.com/in/divyanshu8210",
+        instagram: "https://www.instagram.com",
+      },
+      {
+        name: "harsh",
+        surname: "kumar",
+        role: "Member",
+        img:Harsh,
+        linkedin: "https://www.linkedin.com/in/harsh-ism2006/",
+        instagram: "https://www.instagram.com/harsh9357/",
+      },
+      {
+        name: "sawan",
+        surname: "sharma",
+        role: "Member",
+        img:sawan,
+        linkedin: "https://www.linkedin.com/in/sawan-k-sharma-63987b325/",
+        instagram: "https://www.instagram.com/sawankshrma/",
+      },
+      {
+        name: "Sayan ",
+        surname: "Ghosh",
+        role: "Member",
+        img:Sekhar,
+        linkedin: "https://www.linkedin.com/in/sayan-sekhar-ghosh",
+        instagram: "https://www.instagram.com/sekhar_sayan",
+      },
+      {
+        name: "Aagam",
+        surname: "Jain",
+        role: "Member",
+        img: Aagam,
+        linkedin: "https://www.linkedin.com/in/aagam-jain-10226831a",
+        instagram: "https://www.instagram.com/aagam_jain__19/",
+      },
+      {
+        name: "Bhumi",
+        surname: "Bansal",
+        role: "Member",
+        img: Bhumi,
+        linkedin: "https://www.linkedin.com/in/bansal-bhumi/",
+        instagram: "https://instagram.com/bansalbhumi_22/?hl=en",
+      },
+      {
+        name: "Dhanya",
+        surname: "gautam",
+        role: "Member",
+        img: Dhanya,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "Tanishka",
+        surname: "Dembra",
+        role: "Member",
+        img: Tanishka,
+        linkedin: "https://www.linkedin.com/in/tanishka-dembra/",
+        instagram: "https://www.instagram.com/tanishka_dembra?igsh=MXhqZ2dhdnR0Mzc4cQ%3D%3D&utm_source=qr",
+      },
+      {
+        name: "Suryansh",
+        surname: "Kulshreshtha",
+        role: "Member",
+        img: Suryansh,
+        linkedin: "https://www.linkedin.com/in/suryansh-kulshreshtha-271a9531b/",
+        instagram: "https://www.instagram.com/sury_kul/",
+      },
+      {
+        name: "Varshitha",
+        surname: "Lakshmi",
+        role: "Member",
+        img: Varshitha,
+        linkedin: "https://www.linkedin.com/in/varshitha-lakshmi-maradugu-a42815320",
+        instagram: "https://www.instagram.com/varshitha_maradugu?igsh=MTh1dHQ5dzhpbWxwcg==",
+      },
+      {
+        name: "yash",
+        surname: "agarwal",
+        role: "Member",
+        img: Yash,
+        linkedin: "https://www.linkedin.com/in/yash-agarwal-fast-nd-steady/",
+        instagram: "https://www.instagram.com/yash.agarwal451?igsh=MXF0aTduMm85Y3g0dA%3D%3D&utm_source=qr",
+      },
+      
     ],
   },
   {
@@ -139,7 +262,7 @@ const teamSections = [
         name: "ATHARV",
         surname: "DHARI",
         role: "Head",
-        img: img1,
+        img: Atharv1,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
@@ -147,7 +270,7 @@ const teamSections = [
         name: "SAMIKSHA",
         surname: "AGARWAL",
         role: "Co-Head",
-        img: img1,
+        img: Samiksha,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
@@ -267,8 +390,8 @@ const teamSections = [
         name: "SWAGAT",
         surname: "JENA",
         role: "Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
+        img: Swagat,
+        linkedin: "https://www.linkedin.com/in/swagat-kumar-jena-a21614289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://instagram.com",
       },
     ],
@@ -497,9 +620,9 @@ const teamSections = [
         name: "ABHISHEK",
         surname: "ADARI",
         role: "Co-Head",
-        img: img1,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
+        img: Adari,
+        linkedin: "https://www.linkedin.com/in/adari-abhishek-25130327b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagram: "https://www.instagram.com/abhi__adari?igsh=djIwdWQzZzF1YW1s",
       },
       {
         name: "TAROON",
