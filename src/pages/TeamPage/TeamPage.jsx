@@ -33,7 +33,6 @@ import SANATAN_BAGARIA from "./ProfileImage/SANATAN_BAGARIA.jpeg"
 import img1 from "./ProfileImage/11.jpg"
 import Sohan from "./ProfileImage/Sohan.jpg"
 import Arman from "./ProfileImage/Arman.jpg"
-import Rohit from "./ProfileImage/Rohit.jpg"
 import Sekhar from "./ProfileImage/Sekhar.jpg"
 import Aagam from "./ProfileImage/Aagam.jpg"
 import Bhumi from "./ProfileImage/Bhumi.jpg"
@@ -52,7 +51,9 @@ import sawan from "./ProfileImage/sawan.jpg"
 import Harsh from "./ProfileImage/Harsh.jpg"
 import Yash from "./ProfileImage/Yash.jpg"
 import shaumya from "./ProfileImage/shaumya.jpg"
-
+import MadhulikaGupta from "./ProfileImage/MadhulikaGupta.png"
+import PriyanshKedia from "./ProfileImage/PriyanshKedia.png"
+import Suresh from "./ProfileImage/Suresh.png"
 
 const teamSections = [
   {
@@ -112,18 +113,10 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "ROHIT",
-        surname: "Guleria",
-        role: " Co-head",
-        img: Rohit,
-        linkedin: "https://www.linkedin.com/in/rohit--guleria",
-        instagram: "https://www.instagram.com/ro_guleria",
-      },
-      {
         name: "Devang ",
         surname: "Sharma",
         role: "Member",
-        img:devang,
+        img: devang,
         linkedin: "https://www.linkedin.com/in/devang772",
         instagram: "https://www.instagram.com/devang772?igsh=MTd6ZjA5ZnFrdGVvNw==",
       },
@@ -131,7 +124,7 @@ const teamSections = [
         name: "Divyanshu",
         surname: "Choubey",
         role: "Member",
-        img:divyanshu,
+        img: divyanshu,
         linkedin: "https://www.linkedin.com/in/divyanshu8210",
         instagram: "https://www.instagram.com",
       },
@@ -139,7 +132,7 @@ const teamSections = [
         name: "harsh",
         surname: "kumar",
         role: "Member",
-        img:Harsh,
+        img: Harsh,
         linkedin: "https://www.linkedin.com/in/harsh-ism2006/",
         instagram: "https://www.instagram.com/harsh9357/",
       },
@@ -147,7 +140,7 @@ const teamSections = [
         name: "sawan",
         surname: "sharma",
         role: "Member",
-        img:sawan,
+        img: sawan,
         linkedin: "https://www.linkedin.com/in/sawan-k-sharma-63987b325/",
         instagram: "https://www.instagram.com/sawankshrma/",
       },
@@ -155,7 +148,7 @@ const teamSections = [
         name: "Sayan ",
         surname: "Ghosh",
         role: "Member",
-        img:Sekhar,
+        img: Sekhar,
         linkedin: "https://www.linkedin.com/in/sayan-sekhar-ghosh",
         instagram: "https://www.instagram.com/sekhar_sayan",
       },
@@ -215,7 +208,7 @@ const teamSections = [
         linkedin: "https://www.linkedin.com/in/yash-agarwal-fast-nd-steady/",
         instagram: "https://www.instagram.com/yash.agarwal451?igsh=MXF0aTduMm85Y3g0dA%3D%3D&utm_source=qr",
       },
-      
+
     ],
   },
   {
@@ -642,7 +635,7 @@ const teamSections = [
         name: "PROF. MADHULIKA",
         surname: "GUPTA",
         role: "Convenor",
-        img: img1,
+        img: MadhulikaGupta,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
@@ -650,7 +643,7 @@ const teamSections = [
         name: "PROF. SURESH",
         surname: "KUMAR",
         role: "Co-Convenor",
-        img: img1,
+        img: Suresh,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
@@ -658,7 +651,7 @@ const teamSections = [
         name: "PRIYANSH",
         surname: "KEDIA",
         role: "President, Students' Gymkhana",
-        img: img1,
+        img: PriyanshKedia,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
