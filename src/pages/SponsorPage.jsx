@@ -40,7 +40,7 @@ function SponsorPage() {
     <>
       <div>
         <PageHeader
-          title="SPONSORS"
+          title="PAST SPONSORS"
           subtitle="Explore the vibrant spectrum of cultural celebrations"
           showBackButton={true}
           backPath="/"

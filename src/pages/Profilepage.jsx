@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
 import "./Profilepage.css";
 import PageHeader from "../components/PageHeader/PageHeader";
 
@@ -8,18 +9,18 @@ export function Profile() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [mobilenumber, setMobileNumber] = useState("");
+  const [passid, setpassid] = useState("");
 
   const navigate = useNavigate();
 
   async function getUser() {
     try {
-      const res = await axios.get(
-        "https://srijan-2026.onrender.com/api/v1/user/current-user",
-        { withCredentials: true }
-      );
+      const res = await axiosInstance.get('/user/current-user');
       setUser(res.data.data.fullname);
       setEmail(res.data.data.email);
       setMobileNumber(res.data.data.mobilenumber);
+      setpassid(res.data.data.passid)
+
     } catch (error) {
       setUser("");
       setEmail("");
@@ -29,10 +30,7 @@ export function Profile() {
 
   async function logout() {
     try {
-      await axios.get(
-        "https://srijan-2026.onrender.com/api/v1/user/logout",
-        { withCredentials: true }
-      );
+      await axiosInstance.get('user/logout')
       setUser("");
       setEmail("");
       setMobileNumber("");
@@ -79,7 +77,7 @@ export function Profile() {
             gap-4
           "
         >
-          <h2 className="text-2xl sm:text-3xl text-center mb-3 text-[#FED000]">
+          <h2 className="text-2xl sm:text-3xl text-center mb-3 text-[#FED000] font-bold">
             Profile Details
           </h2>
 
@@ -120,8 +118,9 @@ export function Profile() {
         </div>
 
         {/* SECOND CARD */}
-        <div
-          className="
+        {passid && (
+          <div
+            className="
             glow-card 
             w-full max-w-md 
             p-6 sm:p-8 
@@ -131,10 +130,10 @@ export function Profile() {
             bg-black/10 
             flex items-center justify-center
           "
-        >
-          {/* INNER BOX */}
-          <div
-            className="
+          >
+            {/* INNER BOX */}
+            <div
+              className="
               w-32 sm:w-40 
               h-20 sm:h-28 
               border-4 border-[#FED000] 
@@ -143,10 +142,11 @@ export function Profile() {
               text-[#FED000] 
               text-lg sm:text-xl
             "
-          >
-            BOX
+            >
+              {passid}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

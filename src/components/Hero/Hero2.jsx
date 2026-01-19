@@ -251,14 +251,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                 >
                   {user ? (
                     <>
-                      <span className="nav-link text-2xl font-bold">{user}</span>
-
-                      <button
-                        onClick={logout}
-                        className="nav-link text-red-400 font-bold"
-                      >
-                        LOGOUT
-                      </button>
+                      <NavLink to="/profile" className="nav-link text-2xl font-bold">{user.split(' ')[0]}</NavLink>
                     </>
                   ) : (
                     <NavLink to="/register" className="nav-link">
@@ -361,15 +354,12 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                       {/* MOBILE USER / REGISTER */}
                       <div className="mt-6">
                         {user ? (
-                          <button
-                            onClick={() => {
-                              logout();
-                              setIsMenuOpen(false);
-                            }}
+                          <NavLink
+                            to= "/profile"
                             className="mobile-register-btn"
                           >
-                            <span>LOGOUT</span>
-                          </button>
+                            <span>PROFILE</span>
+                          </NavLink>
                         ) : (
                           <NavLink
                             to="/register"

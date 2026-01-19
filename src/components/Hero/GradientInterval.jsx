@@ -136,7 +136,7 @@ const GradientInterval = () => {
                 <iframe
                   width="600px"
                   className='p-5 m-0 aspect-video size'
-                  src="https://www.youtube.com/embed/-hgwXanM7Qw?si=wQgR4P_R9l-7msrW"
+                  src="https://www.youtube.com/embed/fimlyih-LVs?si=Bub41FpnSL-wcEXa"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

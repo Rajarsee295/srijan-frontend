@@ -64,8 +64,8 @@ const teamSections = [
         surname: "KUMAR",
         role: "Coordinator",
         img: shaumya,
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
+        linkedin: "https://www.linkedin.com/in/ayushaumya",
+        instagram: "https://www.instagram.com/ayushaumya?igsh=eG9rNmw0eGpmamJz&utm_source=qr",
       },
       {
         name: "ATHARV",
