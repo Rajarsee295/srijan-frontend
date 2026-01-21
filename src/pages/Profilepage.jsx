@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import "./Profilepage.css";
 import PageHeader from "../components/PageHeader/PageHeader";
+import { toast } from "react-toastify";
 
 export function Profile() {
   const [user, setUser] = useState("");
@@ -17,13 +18,17 @@ export function Profile() {
         "https://srijan-2026.onrender.com/api/v1/user/current-user",
         { withCredentials: true }
       );
+
       setUser(res.data.data.fullname);
       setEmail(res.data.data.email);
       setMobileNumber(res.data.data.mobilenumber);
+
     } catch (error) {
       setUser("");
       setEmail("");
       setMobileNumber("");
+      navigate("/register");
+      toast.error("Please login to continue")
     }
   }
 
