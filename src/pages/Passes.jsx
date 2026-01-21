@@ -255,8 +255,8 @@ function PassCard({ name, level, days, price, features, image, exclusions }) {
 
       <div className="p-5 sm:p-6 flex flex-col justify-between bg-linear-to-b from-[rgba(49,22,53,0)] to-[rgba(49,22,53,0.75)] backdrop-blur-[10px]">
         <div className="mb-4">
-          <button 
-            className="w-full sm:w-auto bg-[#FFD400] text-black font-bold py-2.5 px-6 rounded-full border-none cursor-pointer transition-all hover:translate-y-[-3px] hover:bg-[#FFE55C]" 
+          <button
+            className="w-full sm:w-auto bg-[#FFD400] text-black font-bold py-2.5 px-6 rounded-full border-none cursor-pointer transition-all hover:translate-y-[-3px] hover:bg-[#FFE55C]"
             onClick={() => {
               alert('Passes coming soon!')
             }}
@@ -272,7 +272,7 @@ function PassCard({ name, level, days, price, features, image, exclusions }) {
             </li>
           ))}
         </ul>
-        
+
         <ul className="list-none text-left text-[0.82rem] sm:text-[0.9rem] flex flex-col gap-2 text-white">
           {exclusions.map((item, index) => (
             <li key={index} className="before:content-['✗'] before:mr-2 before:text-red-500 before:font-bold">
@@ -356,7 +356,7 @@ function Passes() {
               Please log in to view and purchase passes
             </p>
             <NavLink
-              to="/profile"
+              to="/register"
               className="login-redirect-btn inline-block no-underline"
             >
               Go to Login
