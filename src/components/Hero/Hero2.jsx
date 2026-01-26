@@ -12,7 +12,7 @@ import textBackdropSrc from "../../assets/text-backdrop.png";
 import darkCloudBottom from "../../assets/Dark Cloud Bottom.png";
 import lightCloudBottom from "../../assets/Light Cloud Bottom.png";
 import GradientInterval from "./GradientInterval";
-import glamfest from "../../../public/sponsers/Glamfest.png"
+import glamfest from "/sponsers/Glamfest.png"
 
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },

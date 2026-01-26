@@ -46,7 +46,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 1s ease, box-shadow 1s ease;
 }
 
 .sponser-circle-frame img {
@@ -54,24 +54,36 @@
   max-height: 80%;
   object-fit: contain;
   border-radius: 50%;
+  transition: transform 1s ease;
 }
 
 .sponser-circle-frame:hover {
   transform: scale(1.15);
   box-shadow: 0 0 22px #eec403b7;
-  animation: rotateFrame 20s linear infinite;
 }
 
-.sponser-circle-frame:hover img {
-  animation: counterRotate 20s linear infinite;
+.sponser-circle-frame:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  animation: rotateFrame 20s linear infinite;
+  z-index: -1;
 }
+
+/* .sponser-circle-frame:hover img {
+  animation: counterRotate 20s linear infinite;
+} */
 
 @keyframes rotateFrame {
   from {
-    transform: rotate(0deg) scale(1.07);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg) scale(1.07);
+    transform: rotate(360deg);
   }
 }
 

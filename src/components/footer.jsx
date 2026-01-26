@@ -1,7 +1,7 @@
 import React from "react";
-import LinkedIn from '../../public/logo/linkedin.png'
-import Instagram from '../../public/logo/image.png'
-import Image from '../../public/image.png'
+import LinkedIn from '/logo/linkedin.png'
+import Instagram from '/logo/image.png'
+import Image from '/image.png'
 import "./Footer.css";
 import { Link } from "react-router";
 
