@@ -1,6 +1,5 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import "./EventModal.css";
 
 const EventModal = ({ isOpen, onClose, eventData }) => {
@@ -276,7 +275,7 @@ const EventModal = ({ isOpen, onClose, eventData }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <button className="event-modal-register-btn" onClick={onClose}>
+              <button className="event-modal-register-btn" onClick={() => window.open(eventData.registration_link)}>
                 Register Now
               </button>
             </motion.div>

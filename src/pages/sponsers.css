@@ -46,7 +46,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 1s ease, box-shadow 1s ease;
 }
 
 .sponser-circle-frame img {
@@ -54,24 +54,36 @@
   max-height: 80%;
   object-fit: contain;
   border-radius: 50%;
+  transition: transform 1s ease;
 }
 
 .sponser-circle-frame:hover {
   transform: scale(1.15);
   box-shadow: 0 0 22px #eec403b7;
-  animation: rotateFrame 20s linear infinite;
 }
 
-.sponser-circle-frame:hover img {
-  animation: counterRotate 20s linear infinite;
+.sponser-circle-frame:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  animation: rotateFrame 20s linear infinite;
+  z-index: -1;
 }
+
+/* .sponser-circle-frame:hover img {
+  animation: counterRotate 20s linear infinite;
+} */
 
 @keyframes rotateFrame {
   from {
-    transform: rotate(0deg) scale(1.07);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg) scale(1.07);
+    transform: rotate(360deg);
   }
 }
 
@@ -138,5 +150,70 @@
     width: 75px;
     height: 75px;
     min-width: 75px;
+  }
+}
+
+.sponsor-section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.sponsor-section-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FED000;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 20px rgba(254, 208, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.title-sponsor-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.sponser-circle-frame.title-sponsor {
+  width: 250px;
+  height: 250px;
+  border: 3px solid #FED000;
+  box-shadow: 0 0 30px rgba(254, 208, 0, 0.6);
+}
+
+.sponser-circle-frame.gaming-partner {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #FED000;
+  box-shadow: 0 0 25px rgba(254, 208, 0, 0.5);
+}
+
+.placeholder-logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FED000;
+  opacity: 0.7;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sponsor-section-title {
+    font-size: 1.8rem;
+  }
+
+  .sponser-circle-frame.title-sponsor {
+    width: 180px;
+    height: 180px;
+  }
+
+  .sponser-circle-frame.gaming-partner {
+    width: 150px;
+    height: 150px;
+  }
+
+  .placeholder-logo {
+    font-size: 1.2rem;
   }
 }

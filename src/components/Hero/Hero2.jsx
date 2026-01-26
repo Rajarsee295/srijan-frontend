@@ -11,8 +11,8 @@ import Tree from "../../assets/TreeBg.png";
 import textBackdropSrc from "../../assets/text-backdrop.png";
 import darkCloudBottom from "../../assets/Dark Cloud Bottom.png";
 import lightCloudBottom from "../../assets/Light Cloud Bottom.png";
-import darkCloudBottomFull from "../../assets/Dark Cloud Bottom Full.png"
 import GradientInterval from "./GradientInterval";
+import glamfest from "/sponsers/Glamfest.png"
 
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },
@@ -51,23 +51,23 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
         { withCredentials: true }
       );
       setUser(res.data.data.fullname);
-    } catch (error) {
+    } catch {
       setUser("");
     }
   }
 
-  async function logout() {
-    try {
-      await axios.get(
-        "https://srijan-2026.onrender.com/api/v1/user/logout",
-        { withCredentials: true }
-      );
-      setUser("");
-      window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function logout() {
+  //   try {
+  //     await axios.get(
+  //       "https://srijan-2026.onrender.com/api/v1/user/logout",
+  //       { withCredentials: true }
+  //     );
+  //     setUser("");
+  //     window.location.reload();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   useEffect(() => {
     getUser();
@@ -99,7 +99,6 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   // const backgroundY = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const foregroundY = useTransform(scrollYProgress, [0, 2], ["0%", "200%"])
 
   useEffect(() => {
     if (skipAnimation) {
@@ -355,7 +354,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                       <div className="mt-6">
                         {user ? (
                           <NavLink
-                            to= "/profile"
+                            to="/profile"
                             className="mobile-register-btn"
                           >
                             <span>PROFILE</span>
@@ -474,6 +473,33 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
               <p className="hero2-subtitle">
                 -from Centuries Past to Creations Beyond-
               </p>
+
+              {/* Title Sponsor Section */}
+              <motion.div
+                className="mt-8 flex flex-col items-center gap-3 relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: skipAnimation ? 0 : 0.5,
+                }}
+              >
+
+                <div className="relative">
+                  <p className="text-[#FED000] text-sm font-['Cinzel'] font-bold tracking-wider opacity-90 relative z-10 text-shadow-lg">
+                    TITLE SPONSOR
+                  </p>
+                  <div className="absolute inset-0 bg-[#FED000]/30 blur-3xl scale-125 animate-pulse" />
+                  <a className="relative z-10" href="https://www.myntra.com/" target="_blank">
+                    <img
+                      src={glamfest}
+                      alt="Glamfest - Title Sponsor"
+                      className="h-24 w-auto object-contain drop-shadow-[0_0_25px_rgba(254,208,0,0.6)] hover:h-25 transition-all duration-300 animate-logo-bounce"
+                    />
+                  </a>
+                </div>
+
+              </motion.div>
             </motion.div>
           )}
         </motion.div>

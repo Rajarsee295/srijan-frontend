@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import axios from "axios";
 import axiosInstance from "../utils/axiosInstance";
 import "./Profilepage.css";
 import PageHeader from "../components/PageHeader/PageHeader";
@@ -22,7 +21,7 @@ export function Profile() {
       setMobileNumber(res.data.data.mobilenumber);
       setpassid(res.data.data.passid)
 
-    } catch (error) {
+    } catch {
       setUser("");
       setEmail("");
       setMobileNumber("");

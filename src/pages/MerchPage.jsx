@@ -1,10 +1,10 @@
 import PageHeader from "../components/PageHeader/PageHeader";
 import { motion } from "framer-motion";
 import MerchCard from "../components/MerchCard";
-import tshirtFront from "../../public/tshirtFront.png"
-import tshirtBack from "../../public/tshirtBack.png"
-import hoodieFront from "../../public/hoodieFront.png"
-import hoodieBack from "../../public/hoodieBack.png"
+import tshirtFront from "/tshirtFront.png"
+import tshirtBack from "/tshirtBack.png"
+import hoodieFront from "/hoodieFront.png"
+import hoodieBack from "/hoodieBack.png"
 
 function MerchPage() {
   const demoMerchs = [
@@ -41,7 +41,7 @@ function MerchPage() {
             viewport={{ once: true }}
             className="w-85"
           >
-            <MerchCard event={event} index={i} onClick={() => { }} />
+            <MerchCard event={event} index={i}/>
           </motion.div>
         ))}
       </div>

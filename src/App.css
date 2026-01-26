@@ -96,7 +96,7 @@ body::-webkit-scrollbar {
   inset: 0;
   background: linear-gradient(
     180deg,
-    var(--primary-starless, #08061E) 0%,
+    var(--primary-starless, #08061e) 0%,
     var(--primary-abyss, #301258) 50%,
     var(--primary-nebula, #5C2A9A) 100%
   );

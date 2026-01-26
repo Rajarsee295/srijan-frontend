@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function MerchCard({ event, index, onClick }) {
+export default function MerchCard({ event, index }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
 

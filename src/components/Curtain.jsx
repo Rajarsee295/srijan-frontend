@@ -6,7 +6,7 @@ export default function CurtainTransition({ isActive, onComplete }) {
   if (!isActive) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex pointer-events-none">
+    <div className="fixed inset-0 z-9999 flex pointer-events-none">
       
       {/* LEFT */}
       <motion.div

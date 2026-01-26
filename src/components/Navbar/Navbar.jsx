@@ -1,9 +1,6 @@
 // src/components/Navbar/Navbar.jsx
 
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { toast } from "react-toastify";
 
 export default function Navbar() {
 
